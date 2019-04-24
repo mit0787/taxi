@@ -382,7 +382,7 @@ a:hover {
 }
 
 .container {
-  width: 1180px;
+  max-width: 1180px;
   margin: auto;
 }
 
@@ -414,6 +414,20 @@ a:hover {
   color: #8f8f8f;
 }
 
+@media (max-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 576px) {
+  .container {
+    min-width: 320px;
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
 .navbar {
   position: fixed;
   width: 100%;
@@ -432,6 +446,19 @@ a:hover {
       -ms-flex-align: center;
           align-items: center;
   padding: 15px 0 10px;
+}
+
+.navbar__icon {
+  display: none;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 20px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.navbar__icon img {
+  width: 100%;
 }
 
 .navbar__logo {
@@ -481,10 +508,99 @@ a:hover {
   color: #0898fa;
 }
 
+.navbar-buttons__number {
+  display: none;
+}
+
 .navbar__button {
   width: 180px;
   margin-left: 7px;
   padding: 12px;
   font-size: 12px;
   font-weight: 900;
+}
+
+.navbar__cross {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 0;
+  font-size: 32px;
+  background: none;
+}
+
+.navbar__cross:hover {
+  color: #8f8f8f;
+  background: none;
+}
+
+@media (max-width: 991px) {
+  .navbar-block {
+    padding: 10px 0;
+  }
+  .navbar__icon {
+    display: block;
+  }
+  .navbar__logo {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    margin-left: 23px;
+  }
+  .navbar__image {
+    width: 125px;
+  }
+  .navbar__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 43px 28px;
+    width: 240px;
+    height: 100vh;
+    background-color: #fff;
+    -webkit-transform: translateX(-240px);
+            transform: translateX(-240px);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-box-shadow: 0 2px 23px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 23px 1px rgba(0, 0, 0, 0.1);
+  }
+  .navbar__button {
+    margin: 0;
+  }
+  .navbar__button:nth-of-type(2) {
+    margin: 25px 0 17px;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .navbar__cross {
+    display: block;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 576px) {
+  .navbar__logo br {
+    display: none;
+  }
+  .navbar__image {
+    float: none;
+  }
+  .navbar__phone {
+    display: none;
+  }
+  .navbar-buttons__number {
+    display: block;
+    -webkit-box-ordinal-group: -1;
+        -ms-flex-order: -2;
+            order: -2;
+  }
 }

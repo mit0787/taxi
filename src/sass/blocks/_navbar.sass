@@ -7,6 +7,14 @@
     justify-content: space-between
     align-items: center
     padding: 15px 0 10px
+  &__icon
+    display: none
+    align-self: flex-start
+    width: 20px
+    margin-top: 5px
+    cursor: pointer
+    img
+      width: 100%
   &__logo
     width: 260px
   &__image
@@ -33,9 +41,70 @@
       color: $link-c
       &:hover
         color: lighten($link-c, 10%)
+  &-buttons
+    &__number
+      display: none
   &__button
     width: 180px
     margin-left: 7px
     padding: 12px
     font-size: 12px
     font-weight: 900
+  &__cross
+    display: none
+    position: absolute
+    top: 15px
+    right: 15px
+    padding: 0
+    font-size: 32px
+    background: none
+    &:hover
+      color: $text-grey
+      background: none
+
+@media (max-width: 991px)
+  .navbar
+    &-block
+      padding: 10px 0
+    &__icon
+      display: block
+    &__logo
+      flex-grow: 1
+      margin-left: 23px
+    &__image
+      width: 125px
+    &__buttons
+      display: flex
+      flex-direction: column
+      position: absolute
+      top: 0
+      left: 0
+      padding: 43px 28px
+      width: 240px
+      height: 100vh
+      background-color: #fff
+      transform: translateX(-240px)
+      transition: 0.5s
+      box-shadow: 0 2px 23px 1px rgba(0, 0, 0, 0.1)
+    &__button
+      margin: 0
+      &:nth-of-type(2)
+        margin: 25px 0 17px
+        order: -1
+    &__cross
+      display: block
+
+@media (min-width: 320px) and (max-width: 576px)
+  .navbar
+    &__logo
+      br
+        display: none
+    &__image
+      float: none
+    &__phone
+      display: none
+    &-buttons
+      &__number
+        display: block
+        order: -2
+

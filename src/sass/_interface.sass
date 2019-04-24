@@ -14,7 +14,7 @@ a
     color: $text-grey
 
 .container
-  width: 1180px
+  max-width: 1180px
   margin: auto
 
 .button
@@ -36,3 +36,13 @@ a
     &:hover
       background: none
       color: $text-grey
+
+@media (max-width: 1200px)
+  .container
+    width: 90%
+
+@media (min-width: 320px) and (max-width: 576px)
+  .container
+    min-width: 320px
+    width: 100%
+    padding: 0 15px
