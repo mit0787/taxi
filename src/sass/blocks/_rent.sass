@@ -1,0 +1,68 @@
+.rent
+  display: flex
+  align-items: center
+  max-width: 1180px
+  height: 310px
+  margin-top: -81px
+  box-shadow: 0 10px 67px 4px rgba(0, 0, 0, 0.1)
+  border-radius: 6px
+  background-color: #ffffff
+  &__image
+    max-width: 652px
+    img
+      position: relative
+      top: 7px
+      left: -5px
+      width: 100%
+  &__text
+    max-width: 290px
+    margin-top: -7px
+    margin-left: 48px
+  &__title
+    margin: 0 0 29px
+    font-size: 24px
+    line-height: 34px
+    letter-spacing: 0.2px
+  &__button
+    width: 240px
+
+@media (max-width: 1200px)
+  .rent
+    height: 280px
+    &__image
+      max-width: 550px
+    &__text
+      margin-left: 24px
+
+@media (max-width: 991px)
+  .rent
+    height: 250px
+    &__image
+      max-width: 350px
+
+@media (max-width: 768px)
+  .rent
+    flex-direction: column
+    align-items: center
+    height: 395px
+    margin-top: -46px
+    &__text
+      margin-left: 0
+
+@media (max-width: 576px)
+  .rent
+    &__image
+      max-width: 290px
+      img
+        top: 20px
+        left: -13px
+        width: 100%
+        height: 163px
+        object-fit: cover
+    &__text
+      margin-top: 5px
+    &__title
+      max-width: 215px
+      margin-bottom: 21px
+    &__button
+      max-width: 230px

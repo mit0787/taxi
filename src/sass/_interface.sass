@@ -17,8 +17,16 @@ a
   max-width: 1180px
   margin: auto
 
+.section
+  &__title
+    font-size: 42px
+  &__subtitle
+    color: $text-add
+
 .button
-  padding: 23px
+  padding: 23px 0
+  font-size: 14px
+  font-weight: 900
   text-transform: uppercase
   letter-spacing: 0.84px
   background-color: $btn-c
@@ -30,9 +38,10 @@ a
   &:hover
     background-color: $btn-hover
   &_light
+    padding: 21px 0
     letter-spacing: 0.72px
     background: none
-    border: 2px solid #e3eaf0
+    border: 2px solid $btn-br
     &:hover
       background: none
       color: $text-grey
@@ -40,6 +49,12 @@ a
 @media (max-width: 1200px)
   .container
     width: 90%
+
+@media (max-width: 768px)
+  .button
+    padding: 18px 0
+    &_light
+      padding: 16px
 
 @media (min-width: 320px) and (max-width: 576px)
   .container

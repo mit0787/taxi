@@ -7,5 +7,5 @@ btnMenu.addEventListener('click', function () {
 });
 
 menuClose.addEventListener('click', function () {
-  btnBlock.style.transform = "translateX(-240px)";
+  btnBlock.style.transform = "translateX(-260px)";
 });

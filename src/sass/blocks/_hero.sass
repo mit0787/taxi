@@ -1,0 +1,53 @@
+.header
+  background: url("../img/hero/hero-bg.png"), #e3eaf0
+  background-repeat: no-repeat
+  background-position: 45.5vw 60%
+.hero
+  padding: 180px 0 200px
+  &__text
+    margin-bottom: 45px
+    max-width: 700px
+  &__title
+    margin: 0
+    margin-bottom: 26px
+    font-size: 60px
+    letter-spacing: 0.7px
+    br:last-child
+      display: none
+  &__button
+    width: 240px
+
+@media (max-width: 991px)
+  .header
+    background-size: 80%
+    background-position: 33.5vw 60%
+  .hero
+    padding: 160px 0
+    &__text
+      max-width: 450px
+      margin-bottom: 39px
+    &__title
+      margin-bottom: 22px
+      font-size: 32px
+      line-height: 40px
+    &__subtitle
+      font-size: 16px
+
+@media (max-width: 768px)
+  .header
+    background-size: 508px
+    background-position: 30vw 85%
+  .hero
+    padding: 130px 0 200px
+
+
+@media (max-width: 576px)
+  .header
+    background-position: 50% 102%
+  .hero
+    padding: 130px 0 336px
+    &__text
+      max-width: 290px
+    &__title
+      br:last-child
+        display: block
