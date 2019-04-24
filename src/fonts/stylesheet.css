@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Yandex Sans Text';
+    src: url('YandexSansText-Medium.eot');
+    src: url('YandexSansText-Medium.eot?#iefix') format('embedded-opentype'),
+        url('YandexSansText-Medium.woff2') format('woff2'),
+        url('YandexSansText-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+

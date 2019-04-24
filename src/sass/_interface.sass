@@ -1,0 +1,37 @@
+*
+  box-sizing: border-box
+body
+  +reg
+  font-size: 18px
+
+a
+  display: block
+  color: $text-main
+  text-decoration: none
+  outline-style: none
+  &:hover
+    color: $text-grey
+
+.container
+  width: 1180px
+  margin: auto
+
+.button
+  padding: 23px
+  text-transform: uppercase
+  letter-spacing: 0.84px
+  background-color: $btn-c
+  border: none
+  border-radius: 6px
+  outline-style: none
+  cursor: pointer
+  transition: 0.2s
+  &:hover
+    background-color: $btn-hover
+  &_light
+    letter-spacing: 0.72px
+    background: none
+    border: 2px solid #e3eaf0
+    &:hover
+      background: none
+      color: $text-grey
