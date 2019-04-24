@@ -477,6 +477,10 @@ a:hover {
   color: #047acb;
 }
 
+.navbar-phone__link:hover {
+  color: #0898fa;
+}
+
 .navbar__button {
   width: 180px;
   margin-left: 7px;
