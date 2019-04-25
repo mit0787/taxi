@@ -1,0 +1,39 @@
+.features
+  display: flex
+  flex-wrap: wrap
+  padding: 100px 0
+  &__text
+    width: 300px
+  &__title
+    margin: 0
+    margin-top: 28px
+  &__subtitle
+    display: block
+    margin-top: 12px
+  &__list
+    display: flex
+    justify-content: space-between
+    align-items: baseline
+    width: 831px
+  &__item
+    max-width: 230px
+  &-item
+    &__image
+      max-width: 68px
+    &__title
+      margin: 28px 0 16px
+      font-size: 24px
+      line-height: 34px
+    &__text
+      margin: 0
+      font-size: 18px
+      font-weight: 400
+      line-height: 26px
+      color: $text-add
+
+@media (max-width: 1200px)
+  .features
+    flex-wrap: wrap
+    &__text
+      width: auto
+      margin-bottom: 28px
