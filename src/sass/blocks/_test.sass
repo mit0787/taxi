@@ -1,0 +1,69 @@
+.test
+  padding: 24px 0
+  &__title
+    width: 740px
+    margin: auto
+    margin-bottom: 54px
+    text-align: center
+  &__subtitle
+    display: block
+    margin-bottom: 18px
+    text-align: center
+  &__card
+    display: flex
+    align-items: center
+    box-shadow: 0 10px 67px 4px rgba(0, 0, 0, 0.1)
+    border-radius: 6px
+.card
+  &__image
+    position: relative
+    z-index: -999
+    width: 540px
+    padding: 120px 135px
+    background-color: #e3eaf0
+    border-top-left-radius: 6px
+    border-bottom-left-radius: 6px
+  &__number
+    position: absolute
+    top: -37px
+    left: 53px
+    font-size: 36px
+    font-weight: 400
+    color: $text-grey
+    span
+      position: relative
+      top: 71px
+      left: 6px
+      +thin
+      font-size: 140px
+      font-weight: 400
+      color: #fff
+  &__text
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    margin-left: 60px
+    &::before
+      content: ''
+      width: 480px
+      height: 8px
+      margin-top: -43px
+      margin-bottom: 52px
+      border-radius: 4px
+      background-color: #e7e7e7
+  &__title
+    width: 295px
+    margin: 0 0 42px
+    font-size: 24px
+    line-height: 34px
+  &__label
+    color: $text-add
+    font-weight: 400
+    &:not(:last-of-type)
+      margin-bottom: 40px
+  &__buttons
+    margin-top: 65px
+  &__button
+    width: 160px
+    height: 50px
+    padding: 0

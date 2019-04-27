@@ -9,12 +9,12 @@
 }
 
 @font-face {
-  font-family: 'Yandex Sans Text Medium';
-  src: url('YandexSansText-Medium.eot');
-  src: url('YandexSansText-Medium.eot?#iefix') format('embedded-opentype'),
-      url('YandexSansText-Medium.woff2') format('woff2'),
-      url('YandexSansText-Medium.woff') format('woff');
-  font-weight: 500;
+  font-family: 'Yandex Sans Text Thin';
+  src: url('../fonts/YandexSansText-Thin.eot');
+  src: url('../fonts/YandexSansText-Thin.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/YandexSansText-Thin.woff2') format('woff2'),
+      url('../fonts/YandexSansText-Thin.woff') format('woff');
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -23,6 +23,6 @@
   font-weight: bold
 }
 
-@mixin bold {
-  font-family: 'Yandex Sans Text Medium', sans-serif;
+@mixin thin {
+  font-family: 'Yandex Sans Text Thin', sans-serif;
 }

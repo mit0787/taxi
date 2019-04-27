@@ -26,6 +26,50 @@ a
     text-transform: uppercase
     color: $text-grey
 
+input[type="radio"]
+  display: none
+
+input[type="radio"]:checked + label,
+input[type="radio"]:not(:checked) + label
+  z-index: -999
+  position: relative
+  padding-left: 50px
+  cursor: pointer
+  line-height: 20px
+  display: inline-block
+
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before
+  content: ''
+  position: absolute
+  left: 0
+  top: -9px
+  width: 34px
+  height: 34px
+  border: 2px solid #e7e7e7
+  border-radius: 100%
+  background: #fff
+
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after
+  content: ''
+  width: 12px
+  height: 12px
+  background: $link-c
+  position: absolute
+  top: 4px
+  left: 13px
+  border-radius: 100%
+  transition: all 0.2s ease
+
+[type="radio"]:not(:checked) + label:after
+    opacity: 0
+    transform: scale(0)
+
+[type="radio"]:checked + label:after 
+  opacity: 1
+  transform: scale(1)
+
 .button
   padding: 23px 0
   font-size: 14px
