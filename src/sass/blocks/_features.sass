@@ -33,7 +33,36 @@
 
 @media (max-width: 1200px)
   .features
-    flex-wrap: wrap
     &__text
       width: auto
       margin-bottom: 28px
+
+@media (max-width: 991px)
+  .features
+    &__item
+      max-width: 200px
+    &-item
+      &__title
+        font-size: 18px
+        line-height: 28px
+      &__text
+        font-size: 16px
+
+@media (max-width: 768px)
+  .features
+    &__text
+      width: 260px
+      margin: auto
+      margin-bottom: 50px
+    &__list
+      flex-direction: column
+      align-items: center
+    &__item
+      max-width: 260px
+      width: 100%
+      &:not(:last-child)
+        margin-bottom: 35px
+    &-item
+      &__text
+        max-width: 210px
+
