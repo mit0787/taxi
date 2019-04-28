@@ -31,7 +31,6 @@ input[type="radio"]
 
 input[type="radio"]:checked + label,
 input[type="radio"]:not(:checked) + label
-  z-index: -999
   position: relative
   padding-left: 50px
   cursor: pointer
@@ -63,8 +62,8 @@ input[type="radio"]:not(:checked) + label
   transition: all 0.2s ease
 
 [type="radio"]:not(:checked) + label:after
-    opacity: 0
-    transform: scale(0)
+  opacity: 0
+  transform: scale(0)
 
 [type="radio"]:checked + label:after 
   opacity: 1

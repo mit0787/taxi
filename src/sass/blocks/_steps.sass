@@ -1,5 +1,9 @@
 .steps
+  display: grid
+  grid-template-columns: auto minmax(320px, 1180px) auto
   padding: 105px 0
+  &__text
+    grid-column-start: 2
   &__subtitle
     display: block
     margin-bottom: 18px
@@ -9,33 +13,88 @@
     margin: auto
     margin-bottom: 60px
     text-align: center
+  &-block
+    display: grid
+    grid-column: 1 / 4
+    grid-row-start: 2
+    grid-template-rows: 518px 421px 700px 275px
   &__card
-    display: flex
-    justify-content: space-between
-    align-items: flex-start
+    display: grid
+    grid-template-columns: auto minmax(150px, 595px) minmax(150px, 585px) auto
     &:nth-child(even)
-      .steps__text
-        order: 1
-        flex-grow: 1
-        margin-left: 200px
+      .steps-card__title
+        grid-column: 3 / 4
+        margin-left: 6px
     &:nth-child(odd)
-      .steps__text
-        margin-left: 100px
-  &__text
-    width: 350px
-    margin-top: 112px
-    font-size: 24px
-    line-height: 34px
+      .steps-card__title
+        grid-column: 2 / 3
+        margin-left: 102px
+    &:nth-child(1)
+      background: url("../img/steps/iMac.png")
+      background-repeat: no-repeat
+      background-size: contain
+      background-position: calc(50vw - 32px) 0
+    &:nth-child(2)
+      background: url("../img/steps/talk.png")
+      background-repeat: no-repeat
+      background-size: contain
+      background-position: calc(50vw - 643px) 30px
+      .steps-card
+        &__title
+          margin-top: 116px
+    &:nth-child(3)
+      margin-top: -11px
+      background: url("../img/steps/card.png")
+      background-repeat: no-repeat
+      background-size: contain
+      background-position: calc(50vw - 72px) 0
+      .steps-card
+        &__title
+          margin-top: 228px
+    &:nth-child(4)
+      margin-top: -113px
+      background: url("../img/steps/tablet.png")
+      background-repeat: no-repeat
+      background-size: contain
+      background-position: calc(50vw - 643px) 0
+      .steps-card
+        &__title
+          margin-top: 108px
+  &-card
+    &__title
+      max-width: 355px
+      margin-top: 112px
+      font-size: 24px
+      line-height: 34px
+      letter-spacing: 0.4px
   &__number
     display: block
-    margin-bottom: 42px
+    margin-left: -5px
+    margin-bottom: 39px
     +thin
     font-size: 140px
     font-weight: 400
     line-height: 104px
     color: $text-grey
   &__card
-    &_1
-
-    .steps__image
-      margin-right: -137px
+  &__image
+    display: none
+// @media (min-width: 1981px)
+//   .steps
+//     background-position: 53% 295px
+// @media (max-width: 1370px)
+//   .steps
+//     background-position: 23% 295px
+// @media (max-width: 1200px)
+//   .steps
+//     background: none
+//     &__card
+//       &:nth-child(even)
+//         .steps__image
+//           order: -1
+//           width: 600px
+//         .steps__text
+//           flex-grow: 1
+//           margin-left: 0
+//     &__image
+//       display: block
