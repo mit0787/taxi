@@ -113,3 +113,15 @@ input[type="radio"]:not(:checked) + label
     min-width: 320px
     width: 100%
     padding: 0 15px
+
+  input[type="radio"]:checked + label,
+  input[type="radio"]:not(:checked) + label
+    line-height: 26px
+
+  [type="radio"]:checked + label:before,
+  [type="radio"]:not(:checked) + label:before
+    top: 4px
+
+  [type="radio"]:checked + label:after,
+  [type="radio"]:not(:checked) + label:after
+    top: 17px

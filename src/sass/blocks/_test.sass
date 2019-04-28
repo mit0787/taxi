@@ -1,8 +1,7 @@
 .test
-  display: none
   padding: 24px 0
   &__title
-    width: 740px
+    max-width: 740px
     margin: auto
     margin-bottom: 54px
     text-align: center
@@ -18,12 +17,16 @@
 .card
   &__image
     position: relative
+    display: flex
     z-index: -999
-    width: 540px
-    padding: 120px 135px
+    flex-basis: 540px
+    height: 505px
     background-color: #e3eaf0
     border-top-left-radius: 6px
     border-bottom-left-radius: 6px
+    img
+      margin: auto
+      width: 253px
   &__number
     position: absolute
     top: -37px
@@ -39,19 +42,25 @@
       font-size: 140px
       font-weight: 400
       color: #fff
+    &_small
+      display: none
+      margin-bottom: 10px
+      font-size: 14px
+      span
+        color: $text-grey
   &__text
     display: flex
     flex-direction: column
     justify-content: space-between
-    margin-left: 60px
-    &::before
-      content: ''
-      width: 480px
-      height: 8px
-      margin-top: -43px
-      margin-bottom: 52px
-      border-radius: 4px
-      background-color: #e7e7e7
+    flex-basis: 540px
+    margin: 0 60px
+  &__line
+    max-width: 480px
+    width: 100%
+    height: 8px
+    margin-bottom: 57px
+    border-radius: 4px
+    background-color: #e7e7e7
   &__title
     width: 295px
     margin: 0 0 42px
@@ -68,3 +77,56 @@
     width: 160px
     height: 50px
     padding: 0
+
+@media (max-width: 991px)
+  .test
+    &__title
+      max-width: 420px
+  .card
+    &-block
+      padding: 50px 25px
+    &__text
+      flex-basis: 840px
+    &__title
+      width: auto
+    &__image
+      display: none
+    &__number
+      &_small
+        display: block
+    &__line
+      max-width: 840px
+
+@media (max-width: 768px)
+  .card
+    &__text
+      margin: 0
+    &__title
+      width: 295px
+
+@media (max-width: 576px)
+  .test
+    &__text
+      max-width: 290px
+      margin: auto
+    &__subtitle
+      max-width: 230px
+      margin: 0 0 18px
+      text-align: left
+    &__title
+      max-width: 230px
+      margin: 0 0 54px
+      text-align: left
+  .card
+    &__text
+      flex-basis: 240px
+      margin: auto
+    &__title
+      max-width: 230px
+      font-size: 18px
+      line-height: 28px
+    &__label
+      font-size: 16px
+      line-height: 26px
+    &__buttons
+      margin-top: 50px

@@ -50,13 +50,15 @@
 
 @media (max-width: 768px)
   .features
+    flex-direction: column
     &__text
-      width: 260px
+      width: 290px
       margin: auto
       margin-bottom: 50px
     &__list
+      width: 290px
+      margin: auto
       flex-direction: column
-      align-items: center
     &__item
       max-width: 260px
       width: 100%
@@ -66,3 +68,10 @@
       &__text
         max-width: 210px
 
+// @media (max-width: 576px)
+//   .features
+//     &__text
+//       width: 290px
+//     &__list
+//       width: 290px
+//       margin: auto
