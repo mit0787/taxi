@@ -1189,7 +1189,6 @@ input[type="radio"]:not(:checked) + label {
 }
 
 .steps {
-  display: none;
   padding: 105px 0;
 }
 
@@ -1218,20 +1217,25 @@ input[type="radio"]:not(:checked) + label {
           align-items: flex-start;
 }
 
+.steps__card:nth-child(even) .steps__text {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-left: 200px;
+}
+
+.steps__card:nth-child(odd) .steps__text {
+  margin-left: 100px;
+}
+
 .steps__text {
   width: 350px;
   margin-top: 112px;
   font-size: 24px;
   line-height: 34px;
-}
-
-.steps__text:nth-child(even) {
-  -ms-grid-column-align: self-start;
-      justify-self: self-start;
-}
-
-.steps__text:nth-child(odd) {
-  margin-left: 100px;
 }
 
 .steps__number {
