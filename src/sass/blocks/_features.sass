@@ -1,7 +1,8 @@
 .features
-  display: flex
-  flex-wrap: wrap
-  padding: 100px 0
+  &-block
+    display: flex
+    flex-wrap: wrap
+    padding: 100px 0
   &__text
     width: 300px
   &__title
@@ -50,7 +51,8 @@
 
 @media (max-width: 768px)
   .features
-    flex-direction: column
+    &-block
+      flex-direction: column
     &__text
       width: 290px
       margin: auto

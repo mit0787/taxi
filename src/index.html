@@ -55,44 +55,54 @@
   <!-- /.header -->
 
   <main>
-    <div class="container">
-      <section class="section rent">
-        <div class="rent__image"><img src="./img/rent/cars.png" alt="Автомобили"></div>
-        <div class="rent__text">
-          <p class="rent__title">Также у нас можно взять автомобиль в аренду</p>
-          <button class="button button_light rent__button">подробнее об услуге</button>
+    <section class="section rent">
+      <div class="container">
+        <div class="rent-block">
+          <div class="rent__image"><img src="./img/rent/cars.png" alt="Автомобили"></div>
+          <div class="rent__text">
+            <p class="rent__title">Также у нас можно взять автомобиль в аренду</p>
+            <button class="button button_light rent__button">подробнее об услуге</button>
+          </div>
         </div>
-      </section>
-      <!-- /.section rent -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.section rent -->
 
-      <section class="section features">
-        <div class="features__text">
-          <span class="section__subtitle features__subtitle">преимущества</span>
-          <h2 class="section__title features__title">Условия работы</h2>
+    <section class="section features">
+      <div class="container">
+        <div class="features-block">
+          <div class="features__text">
+            <span class="section__subtitle features__subtitle">преимущества</span>
+            <h2 class="section__title features__title">Условия работы</h2>
+          </div>
+          <!-- /.features__text -->
+          <div class="features__list">
+            <div class="features__item">
+              <div class="features-item__image"><img src="./img/features/comp.svg" alt="Компьютер"></div>
+              <h3 class="features-item__title">Дистанционное подключение</h3>
+              <p class="features-item__text">Чтобы начать принимать заказы, просто оставьте заявку на сайте.</p>
+            </div>
+            <div class="features__item">
+              <div class="features-item__image"><img src="./img/features/cards.svg" alt="Карты"></div>
+              <h3 class="features-item__title">Моментальные выплаты на карту</h3>
+              <p class="features-item__text">Выводите деньги из приложения себе на карту, когда хотите.</p>
+            </div>
+            <div class="features__item">
+              <div class="features-item__image"><img src="./img/features/calendar.svg" alt="Календарь"></div>
+              <h3 class="features-item__title">Свободный график работы</h3>
+              <p class="features-item__text">Вы сами выбираете, когда работать.</p>
+            </div>
+          </div>
+          <!-- /.features__list -->
         </div>
-        <!-- /.features__text -->
-        <div class="features__list">
-          <div class="features__item">
-            <div class="features-item__image"><img src="./img/features/comp.svg" alt="Компьютер"></div>
-            <h3 class="features-item__title">Дистанционное подключение</h3>
-            <p class="features-item__text">Чтобы начать принимать заказы, просто оставьте заявку на сайте.</p>
-          </div>
-          <div class="features__item">
-            <div class="features-item__image"><img src="./img/features/cards.svg" alt="Карты"></div>
-            <h3 class="features-item__title">Моментальные выплаты на карту</h3>
-            <p class="features-item__text">Выводите деньги из приложения себе на карту, когда хотите.</p>
-          </div>
-          <div class="features__item">
-            <div class="features-item__image"><img src="./img/features/calendar.svg" alt="Календарь"></div>
-            <h3 class="features-item__title">Свободный график работы</h3>
-            <p class="features-item__text">Вы сами выбираете, когда работать.</p>
-          </div>
-        </div>
-        <!-- /.features__list -->
-      </section>
-      <!-- /.section features -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.section features -->
 
-      <section class="section test">
+    <section class="section test">
+      <div class="container">
         <div class="test__text">
           <span class="section__subtitle test__subtitle">размер вашего заработка</span>
           <h2 class="section__title test__title">Пройдите тест и узнайте, сколько вы заработаете с Яндекс.Такси</h2>
@@ -120,10 +130,11 @@
           </div>
           <!-- /.test__card -->
         </form>
-      </section>
-      <!-- /.section test -->
-    </div>
-    <!-- /.container -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.section test -->
+
     <section class="section steps">
       <div class="steps__text">
         <span class="section__subtitle steps__subtitle">схема регистрации водителем</span>
@@ -150,12 +161,120 @@
         </div>
       </div>
       <!-- /.steps-block -->
-
     </section>
     <!-- /.section steps -->
 
+    <section class="section faq">
+      <div class="container">
+        <div class="faq__text">
+          <span class="section__subtitle faq__subtitle">faq</span>
+          <h2 class="section__title faq__title">Часто задаваемые вопросы</h2>
+        </div>
+        <div class="faq__list">
+          <input type="checkbox" class="faq__toggle" id="block-1">
+          <label for="block-1" class="faq__question">Какой автомобиль подходит для работы?</label>
+          <div class="faq__box">
+            <p class="faq__answer">После заполнения формы мы отправим вам на почту все инструкции для входа личный
+              кабинет.</p>
+          </div>
+          <div class="faq__line"></div>
+          <input type="checkbox" class="faq__toggle" id="block-2">
+          <label for="block-2" class="faq__question">Какой планшет или телефон нужен для работы?</label>
+          <div class="faq__box">
+            <p class="faq__answer">После заполнения формы мы отправим вам на почту все инструкции для входа личный
+              кабинет.</p>
+          </div>
+          <div class="faq__line"></div>
+          <input type="checkbox" class="faq__toggle" id="block-3">
+          <label for="block-3" class="faq__question">Как авторизоваться в приложении?</label>
+          <div class="faq__box">
+            <p class="faq__answer">После заполнения формы мы отправим вам на почту все инструкции для входа личный
+              кабинет.</p>
+          </div>
+          <div class="faq__line"></div>
+          <input type="checkbox" class="faq__toggle" id="block-4">
+          <label for="block-4" class="faq__question">Что включить, чтобы принимать заказы?</label>
+          <div class="faq__box">
+            <p class="faq__answer">После заполнения формы мы отправим вам на почту все инструкции для входа личный
+              кабинет.</p>
+          </div>
+          <div class="faq__line"></div>
+          <input type="checkbox" class="faq__toggle" id="block-5">
+          <label for="block-5" class="faq__question">Почему не приходят заказы?</label>
+          <div class="faq__box">
+            <p class="faq__answer">После заполнения формы мы отправим вам на почту все инструкции для входа личный
+              кабинет.</p>
+          </div>
+          <div class="faq__line"></div>
+        </div>
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.section faq -->
+
+    <section class="section request">
+      <div class="container">
+        <div class="request__wrapper">
+          <div class="request-block">
+            <div class="request__text">
+              <h2 class="section__title request__title">Заявка на работу водителем в Яндекс.Такси</h2>
+              <!-- /.request__title -->
+              <p class="request__description">Оставьте заявку, мы перезвоним и проконсультируем вас по дальнейшим
+                действиям
+              </p>
+              <!-- /.request__description -->
+            </div>
+            <!-- /.request__text -->
+            <form action="#" class="request__form">
+              <input class="request__input" type="text" name="name" placeholder="Имя">
+              <input class="request__input" type="text" name="phone" placeholder="Номер телефона">
+              <input class="request__input" type="text" name="city" placeholder="Город">
+              <input class="button request__button" type="button" value="отправить">
+              <input type="checkbox" name="" id="accept">
+              <label for="accept" class="request__accept">Принимаю (акцептую) <a href="#">договор оферту (агентский
+                  договор)</a>
+                и согласен на <a href="#">обработку персональных данных</a></label>
+            </form>
+            <!-- /.request__form -->
+            <div class="request__connect">
+              <p class="request__phone">Или свяжитесь с нами самостоятельно: <a href="tel:8(903)000-00-00">8 (903)
+                  000-00-00</a></p>
+              <div class="request__links">
+                <a href="" class="button button_light request__link"><img src="" alt="">watsapp</a>
+                <a href="" class="button button_light request__link"><img src="" alt="">viber</a>
+                <a href="" class="button button_light request__link"><img src="" alt="">telegram</a>
+              </div>
+            </div>
+          </div>
+          <!-- /.request-block -->
+          <div class="request__image">
+            <img src="./img/request/iphone.png" alt="">
+          </div>
+          <!-- /.request__image -->
+        </div>
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.section request -->
   </main>
   <!-- /.main -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-block">
+        <span class="footer__title">Прописать название © 2019</span>
+        <!-- /.footer__title -->
+        <a href="tel:+7 (000) 000-00-00" class="footer__phone">+7 (000) 000-00-00</a> <!-- /.footer_phone -->
+        <div class="footer__buttons">
+          <button href="#" class="button button_light footer__button">звонок директору</button>
+          <button href="#" class="button button_light footer__button">взять авто в аренду</button>
+          <button href="#" class="button button_light footer__button">передать реквизиты</button>
+        </div>
+        <!-- /.footer__buttons -->
+      </div>
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- /.footer -->
 
   <script src="./js/main.js"></script>
 
