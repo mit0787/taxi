@@ -9,7 +9,12 @@
     flex-direction: column
     max-width: 580px
     margin: auto
+  &__title
+    margin-top: 0
+    margin-bottom: 22px
   &__description
+    margin: 0
+    margin-bottom: 42px
     color: $text-add
     font-size: 18px
     font-weight: 400
@@ -17,10 +22,8 @@
   &__form
     display: flex
     flex-direction: column
-    input[type="checkbox"]
-      display: none
   &__input
-    width: 580px
+    width: 100%
     height: 50px
     margin-bottom: 20px
     padding-left: 19px
@@ -32,10 +35,13 @@
       font-weight: 400
   &__button
     padding: 17px 0
-    margin-bottom: 22px
+    margin-bottom: 21px
+  &__checkbox
+    display: none
   &__accept
     position: relative
-    margin-bottom: 40px
+    max-width: 440px
+    margin-bottom: 21px
     padding-left: 45px
     font-size: 14px
     font-weight: 400
@@ -43,29 +49,100 @@
     a
       display: inline-block
       color: $link-c
+      &:hover
+        color: lighten($link-c, 10%)
     &::before
       content: ''
       position: absolute
-      top: 0
-      left: 0
-      width: 24px
-      height: 24px
+      top: 3px
+      left: 1px
+      width: 22px
+      height: 22px
       border-radius: 6px
       border: 1px solid #e4e4e4
       cursor: pointer
   &__phone
+    margin-bottom: 23px
     font-size: 16px
+    letter-spacing: 0.2px
     a
       display: inline-block
+      letter-spacing: 0.1px
   &__links
     display: flex
     justify-content: space-between
   &__link
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 14px 0
     flex-basis: 180px
     color: $text-add
-    text-align: center
+    img
+      margin-right: 10px
   &__image
     padding: 80px 55px
     background-color: #e3eaf0
     border-top-right-radius: 6px
     border-bottom-right-radius: 6px
+
+.request__checkbox:checked + label::before
+  background: url("../img/request/icon_check.svg")
+  background-repeat: no-repeat
+  background-position: 50% 50%
+
+@media (max-width: 1200px)
+  .request
+    &-block
+      max-width: 480px
+      padding: 80px 0
+    &__image
+      padding: 80px 20px
+    &__link
+      flex-basis: 155px
+
+@media (max-width: 991px)
+  .request
+    &__description
+      max-width: 540px
+      font-size: 16px
+    &__image
+      display: none
+
+@media (max-width: 768px)
+  .request
+    &-block
+      padding: 50px
+    &__title
+      margin-bottom: 19px
+    &__description
+      margin-bottom: 29px
+    &__input
+      margin-bottom: 15px
+    &__phone
+      margin-bottom: 19px
+      line-height: 26px
+      a
+        color: $link-c
+        font-weight: 400
+    &__links
+      flex-direction: column
+    &__link
+      flex-basis: 50px
+      width: 180px
+      margin-bottom: 15px
+
+@media (max-width: 576px)
+  .request
+    margin: 0
+    padding-bottom: 380px
+    background: url("../img/request/request-bg.png")
+    background-repeat: no-repeat
+    background-position: 50% 111.6%
+    &__wrapper
+      box-shadow: none
+    &-block
+      max-width: 290px
+      padding: 0
+    &__description
+      line-height: 24px

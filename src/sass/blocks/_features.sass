@@ -22,7 +22,7 @@
     &__image
       max-width: 68px
     &__title
-      margin: 28px 0 16px
+      margin: 28px 0 14px
       font-size: 24px
       line-height: 34px
     &__text
@@ -45,7 +45,7 @@
     &-item
       &__title
         font-size: 18px
-        line-height: 28px
+        line-height: 24px
       &__text
         font-size: 16px
 
@@ -53,10 +53,13 @@
   .features
     &-block
       flex-direction: column
+      padding: 55px 0
     &__text
       width: 290px
       margin: auto
-      margin-bottom: 50px
+      margin-bottom: 45px
+    &__title
+      margin-top: 21px
     &__list
       width: 290px
       margin: auto
@@ -65,15 +68,25 @@
       max-width: 260px
       width: 100%
       &:not(:last-child)
-        margin-bottom: 35px
+        margin-bottom: 30px
+      &:nth-child(2)
+        .features-item__title
+          max-width: 220px
     &-item
       &__text
         max-width: 210px
+        line-height: 24px
+      &__title
+        margin: 18px 0 12px
+        line-height: 28px
+        letter-spacing: 0.2px
 
-// @media (max-width: 576px)
-//   .features
-//     &__text
-//       width: 290px
-//     &__list
-//       width: 290px
-//       margin: auto
+@media (max-width: 576px)
+  .features
+    &-item
+      &__image
+        max-width: 56px
+        img
+          width: 100%
+  .features__item:last-child .features-item__image
+    max-width: 47px

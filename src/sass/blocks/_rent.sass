@@ -1,22 +1,18 @@
 .rent
   &-block
-    display: flex
-    align-items: center
-    max-width: 1180px
-    height: 310px
-    margin-top: -81px
+    display: grid
+    grid-template-columns: minmax(0, 700px) minmax(280px, 480px)
+    width: 100%
+    margin-top: -80px
+    padding: 73px 0 80px
     box-shadow: 0 10px 67px 4px rgba(0, 0, 0, 0.1)
     border-radius: 6px
-    background-color: #ffffff
-  &__image
-    max-width: 652px
-    margin-left: 50px
-    img
-      width: 100%
+    background: url("../img/rent/cars.png"), #ffffff
+    background-repeat: no-repeat
+    background-position: -5px -10px
   &__text
     max-width: 290px
-    margin-top: -9px
-    margin-left: 54px
+    grid-column: 2 / 3
   &__title
     margin: 0 0 29px
     font-size: 24px
@@ -28,43 +24,36 @@
 @media (max-width: 1200px)
   .rent
     &-block
-      height: 280px
-    &__image
-      max-width: 550px
-    &__text
-      margin-left: 24px
+      grid-template-columns: minmax(0, 680px) minmax(280px, 400px)
+      background-position: -15px 50%
+      background-size: 50vw
 
 @media (max-width: 991px)
   .rent
     &-block
-      height: 250px
-    &__image
-      max-width: 350px
+      grid-template-columns: minmax(0, 680px) 290px
+      padding: 50px 0
+    &__text
+      max-width: 220px
+    &__button
+      width: 230px
 
 @media (max-width: 768px)
   .rent
     &-block
-      flex-direction: column
-      align-items: center
-      height: 395px
-      margin-top: -46px
-    &__image
-      max-width: 290px
-      margin: 0
-      margin-top: 19px
-      img
-        width: 100%
-        height: 164px
-        object-fit: contain
+      display: block
+      background-size: 57vw
+      background-position: 50% 16px
     &__text
-      margin-left: 0
+      margin: auto
+      margin-top: 120px
+    &__title
+      margin-bottom: 21px
+
 
 @media (max-width: 576px)
   .rent
-    &__text
-      margin-top: -15px
-    &__title
-      max-width: 215px
-      margin-bottom: 21px
-    &__button
-      max-width: 230px
+    &-block
+      margin-top: -46px
+      background-size: 325px
+      background-position: calc(50% - 13px) 16px

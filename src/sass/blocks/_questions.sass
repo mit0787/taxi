@@ -1,47 +1,94 @@
 .faq
-  padding: 100px 0
+  padding: 93px 0 82px
   background: url("../img/questions/question.png")
   background-repeat: no-repeat
-  background-position: calc(50vw - 600px) 100px
+  background-position: calc(50vw - 567px) 77px
   &__text
-    width: 780px
+    max-width: 780px
     margin: auto
     text-align: center
   &__subtitle
     display: block
   &__title
     position: relative
-    margin-bottom: 80px
-    &::after
-      content: ''
-      position: absolute
-      left: 0
-      bottom: -50px
-      width: 100%
-      height: 1px
-      background-color: #ebebeb
+    margin-top: 18px
+    margin-bottom: 49px
   &__list
     max-width: 780px
     margin: auto
   &__question
     display: block
-    margin-bottom: 30px
+    margin-bottom: 33px
+    line-height: 28px
+    letter-spacing: 0.2px
   &__answer
     max-width: 730px
-    margin-bottom: 55px
+    margin-top: -9px
+    margin-bottom: 51px
     color: $text-grey
     font-weight: 400
     line-height: 26px
   &__line
     width: 100%
     height: 1px
-    margin-bottom: 30px
+    margin-bottom: 27px
     background-color: #ebebeb
   &__toggle
     display: none
     & + label
+      position: relative
       cursor: pointer
+      webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+      &:after
+        content: ''
+        position: absolute
+        top: 5px
+        right: 23px
+        width: 5px
+        height: 5px
+        border-bottom: 2px solid
+        border-right: 2px solid
+        border-color: #d0d0d0
+        transform: rotate(45deg)
     & + label + div
       display: none
     &:checked + label + div
       display: block
+    &:checked + label
+      &:after
+        top: 10px
+        transform: rotate(225deg)
+
+@media (max-width: 1200px)
+  .faq
+    background-position-x: calc(50vw - 510px)
+
+@media (max-width: 768px)
+  .faq
+    padding: 64px 0 52px
+    background: none
+    &__title
+      margin-bottom: 31px
+    &__line
+      margin-bottom: 19px
+    &__question
+      margin-bottom: 20px
+    &__answer
+      max-width: 515px
+      margin-bottom: 25px
+      font-size: 16px
+      line-height: 24px
+
+@media (max-width: 576px)
+  .faq
+    &__text
+      max-width: 247px
+      margin: auto
+      text-align: left
+    &__list
+      max-width: 290px
+    &__question
+      max-width: 250px
+    &__toggle + label
+      &:after
+        right: -32px

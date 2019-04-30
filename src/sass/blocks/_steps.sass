@@ -1,18 +1,18 @@
 .steps
   display: grid
   grid-template-columns: auto minmax(320px, 1180px) auto
-  padding: 105px 0
+  padding: 105px 0 0
   &__text
     grid-column-start: 2
+    text-align: center
   &__subtitle
     display: block
     margin-bottom: 18px
-    text-align: center
+    letter-spacing: 0.84px
   &__title
     width: 620px
     margin: auto
-    margin-bottom: 60px
-    text-align: center
+    margin-bottom: 62px
   &-block
     display: grid
     grid-column: 1 / 4
@@ -29,30 +29,31 @@
       .steps-card__title
         grid-column: 2 / 3
         margin-left: 102px
-    &:nth-child(1)
+  &-card
+    &_1
       background: url("../img/steps/iMac.png")
       background-repeat: no-repeat
       background-size: contain
       background-position: calc(50vw - 32px) 0
-    &:nth-child(2)
+    &_2
       background: url("../img/steps/talk.png")
       background-repeat: no-repeat
       background-size: contain
-      background-position: calc(50vw - 643px) 30px
+      background-position: calc(50vw - 643px) 28px
       .steps-card
         &__title
           margin-top: 116px
-    &:nth-child(3)
+    &_3
       margin-top: -11px
       background: url("../img/steps/card.png")
       background-repeat: no-repeat
       background-size: contain
-      background-position: calc(50vw - 72px) 0
+      background-position: calc(50vw - 72px) -2px
       .steps-card
         &__title
           margin-top: 228px
-    &:nth-child(4)
-      margin-top: -113px
+    &_4
+      margin-top: -115px
       background: url("../img/steps/tablet.png")
       background-repeat: no-repeat
       background-size: contain
@@ -60,7 +61,6 @@
       .steps-card
         &__title
           margin-top: 108px
-  &-card
     &__title
       max-width: 355px
       margin-top: 112px
@@ -76,25 +76,96 @@
     font-weight: 400
     line-height: 104px
     color: $text-grey
-  &__card
-  &__image
-    display: none
-// @media (min-width: 1981px)
-//   .steps
-//     background-position: 53% 295px
-// @media (max-width: 1370px)
-//   .steps
-//     background-position: 23% 295px
-// @media (max-width: 1200px)
-//   .steps
-//     background: none
-//     &__card
-//       &:nth-child(even)
-//         .steps__image
-//           order: -1
-//           width: 600px
-//         .steps__text
-//           flex-grow: 1
-//           margin-left: 0
-//     &__image
-//       display: block
+
+@media (max-width: 1200px)
+  .steps
+    &__card:nth-child(even)
+      background-position-x: calc(50vw - 535px)
+
+@media (max-width: 991px)
+  .steps
+    &__title
+      max-width: 400px
+    &-block
+      grid-template-rows: 435px 335px 500px 275px
+    &-card
+      &__title
+        font-size: 18px
+        line-height: 26px
+      &_1
+        background-size: contain
+        .steps-card
+          &__title
+            margin-top: 80px
+      &_2
+        background-size: contain
+        .steps-card
+          &__title
+            margin-top: 50px
+      &_3
+        margin-top: -55px
+        background-size: contain
+        .steps-card
+          &__title
+            margin-top: 150px
+      &_4
+        background-size: 420px
+    &__card
+      &:nth-child(even)
+        background-position: calc(50vw - 420px) center 
+      &:nth-child(odd)
+        background-position-y: center
+    &__number
+      font-size: 100px
+
+@media (max-width: 768px)
+  .steps
+    padding: 53px 0 0
+    &__subtitle
+      margin-bottom: 23px
+    &__title
+      max-width: 290px
+      margin-bottom: 17px
+    &-block
+      display: block
+    &__card
+      display: block
+      padding-top: 292px
+      margin: 0
+      &:nth-child(even)
+        background-position: 50% 0
+        .steps-card__title
+          max-width: 420px
+          margin: 0 auto
+      &:nth-child(odd)
+        background-position: 50% 0
+        .steps-card__title
+          max-width: 420px
+          margin: 0 auto
+    &-card
+      &_1
+        background-size: 365px
+        background-position: (calc(50% + 25px) 26px)!important
+      &_2
+        padding-top: 275px
+        background-size: 359px
+        background-position-y: 40px!important
+      &_3
+        background-size: 371px
+        background-position-y: 19px!important
+      &_4
+        padding-top: 275px
+        background-size: 350px
+        background-position-y: 42px!important
+    &__number
+      margin-bottom: 19px
+
+@media (max-width: 576px)
+  .steps
+    &__text
+      max-width: 290px
+      margin: auto
+      text-align: left
+    &-card
+      &__title
+        max-width: 290px!important
