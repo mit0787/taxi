@@ -1853,6 +1853,7 @@ input[type="radio"] {
 
 .footer__button:hover {
   color: gainsboro;
+  border-color: #838383;
 }
 
 .footer__button:first-child {
