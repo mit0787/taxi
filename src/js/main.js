@@ -58,9 +58,9 @@ window.addEventListener('DOMContentLoaded', function () {
     input.value = value; // выводим результат
   }
 
-  let btnSubmit = document.querySelector('.card__button_submit'); // удалить после наладки валидации
+  let btnSubmit = document.querySelector('.card__button_submit'); // удалить после настройки отправки формы
 
-  btnSubmit.addEventListener('click', function (event) { // удалить после наладки валидации
+  btnSubmit.addEventListener('click', function (event) { // удалить после настройки отправки формы
     event.preventDefault();
     card[4].style.display = "none";
     card[5].style.display = "grid";
@@ -91,8 +91,11 @@ window.addEventListener('DOMContentLoaded', function () {
       modals = document.querySelectorAll('.modal'),
       phoneLink = document.querySelector('.navbar-phone__link'),
       heroBtn = document.querySelector('.hero__button'),
-      request = document.querySelector('.modal-request');
-
+      request = document.querySelector('.modal-request'),
+      submitBtn = document.querySelectorAll('.request__button'),
+      confirm = document.querySelector('.confirm'),
+      callBtn = document.querySelector('.footer__call'),
+      callManager = document.querySelector('.call-manager');
 
   btnClose.forEach(function (item, i) {
     item.addEventListener('click', function () {
@@ -116,6 +119,17 @@ window.addEventListener('DOMContentLoaded', function () {
 
   phoneLink.addEventListener('click', function () {
     modalOpen(request);
+  });
+
+  callBtn.addEventListener('click', function () {
+    modalOpen(callManager);
+  });
+
+  submitBtn.forEach(function (item) { // удалить после настройки отправки формы
+    item.addEventListener('click', function (event) {
+      event.preventDefault();
+      modalOpen(confirm);
+    });
   });
 
   function modalClose(elem) {

@@ -398,7 +398,7 @@
         <!-- /.footer__title -->
         <a href="tel:+7(000)000-00-00" class="footer__phone">+7 (000) 000-00-00</a> <!-- /.footer_phone -->
         <div class="footer__buttons">
-          <button class="button button_light footer__button">звонок директору</button>
+          <button class="button button_light footer__button footer__call">звонок директору</button>
           <button class="button button_light footer__button">взять авто в аренду</button>
           <button class="button button_light footer__button">передать реквизиты</button>
         </div>
@@ -813,8 +813,7 @@
           <input class="button request__button" type="submit" value="отправить">
           <input class="request__checkbox" type="checkbox" id="modal-accept">
           <label for="modal-accept" class="request__accept">Принимаю (акцептую) <a href="#offer">договор оферту
-              (агентский
-              договор)</a>
+              (агентский договор)</a>
             и согласен на <a href="#">обработку персональных данных</a></label>
         </form>
         <!-- /.request__form -->
@@ -832,6 +831,46 @@
         </div>
       </div>
       <!-- /.request-block -->
+    </div>
+  </div>
+
+  <div class="modal confirm">
+    <div class="confirm__wrapper">
+      <div class="confirm__text">
+          <button class="modal__cross confirm__cross">&times;</button>
+        <h2 class="section__title confirm__title">Спасибо!</h2>
+        <p class="confirm__description">Мы получили вашу заявку 
+            и перезвоним в течение 15 минут, 
+            чтобы обсудить детали</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal call-manager">
+    <div class="call-manager__wrapper">
+      <button class="modal__cross call-manager__cross">&times;</button>
+      <div class="call-manager__photo">
+        <span class="call-manager__name">Фамилия  и имя</span>
+        <div class="call-manager__image"><img src="./img/modal/photo.png" alt=""></div>
+      </div>
+      <div class="call-manager-block">
+        <div class="call-manager__text">
+          <h2 class="section__title call-manager__title">Заявка на звонок
+              директора</h2>
+          <p class="call-manager__description">Есть вопрос, который хотите обсудить с директором 
+              напрямую? Оставьте заявку,  и Имя Фамилия свяжется 
+              с вами в течение ???????</p>
+        </div>
+        <form action="#" class="call-manager__form">
+          <input type="text" class="call-manager__input request__input" name="name" id="call-name" placeholder="Имя">
+          <input type="text" class="call-manager__input request__input" name="phone" id="call-phone" placeholder="Номер телефона">
+          <input type="submit" class="button call-manager__button" value="Отправить">
+          <input class="request__checkbox" type="checkbox" id="call-manager-accept">
+          <label for="call-manager-accept" class="request__accept call-manager__accept">Принимаю (акцептую) <a href="#offer">договор оферту
+              (агентский договор)</a>
+            и согласен на <a href="#">обработку персональных данных</a></label>
+        </form>
+      </div>
     </div>
   </div>
 

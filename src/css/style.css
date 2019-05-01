@@ -2085,10 +2085,6 @@ input[type="radio"] {
   background: none;
 }
 
-.modal-request {
-  display: none;
-}
-
 .modal-request__wrapper {
   position: relative;
   max-width: 1180px;
@@ -2165,6 +2161,132 @@ input[type="radio"] {
   margin: 0 auto 50px;
 }
 
+.confirm__wrapper {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  border-radius: 6px;
+  background: url("../img/test/round-cars-check.png"), #e3eaf0;
+  background-repeat: no-repeat;
+  background-position: -29px -19px;
+}
+
+.confirm__text {
+  position: relative;
+  margin-left: 420px;
+  padding: 123px 80px 160px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: #ffffff;
+}
+
+.confirm__title {
+  margin: 0 0 9px;
+}
+
+.confirm__description {
+  margin: 0;
+  color: #4a4a4a;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.call-manager__wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1180px;
+  width: 100%;
+  margin: auto;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.call-manager__photo {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-preferred-size: 540px;
+      flex-basis: 540px;
+  border-radius: 6px 0 0 6px;
+  background: #e3eaf0;
+}
+
+.call-manager__name {
+  position: absolute;
+  top: 144px;
+  left: -16px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  color: #4a4a4a;
+  font-size: 14px;
+  line-height: 26px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.call-manager__name::before {
+  content: '';
+  position: inherit;
+  display: block;
+  top: 9px;
+  left: -18px;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background-color: #047acb;
+}
+
+.call-manager-block {
+  -ms-flex-preferred-size: 640px;
+      flex-basis: 640px;
+  width: 100%;
+  padding: 83px 60px 78px;
+}
+
+.call-manager__text {
+  max-width: 480px;
+  margin-bottom: 27px;
+}
+
+.call-manager__title {
+  margin: 0;
+}
+
+.call-manager__input {
+  max-width: 480px;
+}
+
+.call-manager__button {
+  max-width: 480px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 17px 0;
+}
+
+.call-manager__accept {
+  display: block;
+}
+
+.call-manager__description {
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.call-manager__image {
+  max-width: 459px;
+  margin: 0 auto -4px;
+}
+
+.call-manager__image img {
+  width: 100%;
+}
+
 @media (max-width: 1200px) {
   .modal-request-block {
     padding: 0;
@@ -2181,6 +2303,9 @@ input[type="radio"] {
   .offer__text {
     margin: 60px 15px 40px 60px;
   }
+  .call-manager__wrapper {
+    margin: auto 15px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -2190,6 +2315,17 @@ input[type="radio"] {
   .modal-request-block {
     margin: auto;
     padding: 80px 0;
+  }
+  .confirm__wrapper {
+    max-width: 480px;
+  }
+  .confirm__text {
+    margin: 0;
+    padding: 80px;
+    border-radius: 6px;
+  }
+  .call-manager-block {
+    padding: 40px 60px;
   }
 }
 
@@ -2214,14 +2350,33 @@ input[type="radio"] {
     -ms-flex-preferred-size: 50px;
         flex-basis: 50px;
   }
+  .call-manager__photo {
+    display: none;
+  }
+  .call-manager-block {
+    margin: auto;
+  }
 }
 
 @media (max-width: 576px) {
   .modal-request__wrapper {
-    margin: auto 0;
+    margin: auto 15px;
   }
   .modal-request-block {
     max-width: 290px;
-    padding: 20px 0;
+    padding: 20px 10px;
+  }
+  .confirm__wrapper {
+    max-width: 290px;
+  }
+  .confirm__text {
+    padding: 80px 20px;
+  }
+  .call-manager-block {
+    max-width: 290px;
+    padding: 40px 10px;
+  }
+  .call-manager__description {
+    font-size: 14px;
   }
 }

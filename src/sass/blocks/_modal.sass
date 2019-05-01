@@ -21,7 +21,6 @@
       color: $text-grey
       background: none
   &-request
-    display: none
     &__wrapper
       position: relative
       max-width: 1180px
@@ -77,6 +76,93 @@
     padding: 18px 0
     margin: 0 auto 50px
 
+.confirm
+  &__wrapper
+    max-width: 900px
+    width: 100%
+    margin: auto
+    border-radius: 6px
+    background: url("../img/test/round-cars-check.png"), #e3eaf0
+    background-repeat: no-repeat
+    background-position: -29px -19px
+  &__text
+    position: relative
+    margin-left: 420px
+    padding: 123px 80px 160px
+    border-top-right-radius: 6px
+    border-bottom-right-radius: 6px
+    background: #ffffff
+  &__title
+    margin: 0 0 9px
+  &__description
+    margin: 0
+    color: $text-add
+    font-weight: 400
+    line-height: 26px
+
+.call-manager
+  &__wrapper
+    position: relative
+    display: flex
+    max-width: 1180px
+    width: 100%
+    margin: auto
+    border-radius: 6px
+    background: #fff
+  &__photo
+    position: relative
+    display: flex
+    align-items: flex-end
+    flex-basis: 540px
+    border-radius: 6px 0 0 6px
+    background: #e3eaf0
+  &__name
+    position: absolute
+    top: 144px
+    left: -16px
+    transform: rotate(-90deg)
+    color: $text-add
+    font-size: 14px
+    line-height: 26px
+    text-transform: uppercase
+    letter-spacing: 1.2px
+    &::before
+      content: ''
+      position: inherit
+      display: block
+      top: 9px
+      left: -18px
+      width: 6px
+      height: 6px
+      border-radius: 2px
+      background-color: #047acb
+  &-block
+    flex-basis: 640px
+    width: 100%
+    padding: 83px 60px 78px
+  &__text
+    max-width: 480px
+    margin-bottom: 27px
+  &__title
+    margin: 0
+  &__input
+    max-width: 480px
+  &__button
+    max-width: 480px
+    width: 100%
+    margin-bottom: 20px
+    padding: 17px 0
+  &__accept
+    display: block
+  &__description
+    font-weight: 400
+    line-height: 26px
+  &__image
+    max-width: 459px
+    margin: 0 auto -4px
+    img
+      width: 100%
+
 @media (max-width: 1200px)
   .modal
     &-request
@@ -91,6 +177,9 @@
       margin: auto 15px
     &__text
       margin: 60px 15px 40px 60px
+  .call-manager
+    &__wrapper
+      margin: auto 15px
 
 @media (max-width: 991px)
   .modal
@@ -100,6 +189,16 @@
       &-block
         margin: auto
         padding: 80px 0
+  .confirm
+    &__wrapper
+      max-width: 480px
+    &__text
+      margin: 0
+      padding: 80px
+      border-radius: 6px
+  .call-manager
+    &-block
+      padding: 40px 60px
 
 @media (max-width: 768px)
   .offer
@@ -118,12 +217,28 @@
         padding: 40px 0
       &__link
         flex-basis: 50px
+  .call-manager
+    &__photo
+      display: none
+    &-block
+      margin: auto
 
 @media (max-width: 576px)
   .modal
     &-request
       &__wrapper
-        margin: auto 0
+        margin: auto 15px
       &-block
         max-width: 290px
-        padding: 20px 0
+        padding: 20px 10px
+  .confirm
+    &__wrapper
+      max-width: 290px
+    &__text
+      padding: 80px 20px
+  .call-manager
+    &-block
+      max-width: 290px
+      padding: 40px 10px
+    &__description
+      font-size: 14px
