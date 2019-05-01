@@ -979,6 +979,10 @@ input[type="radio"] {
   border-radius: 6px;
 }
 
+.test__card:not(:nth-child(1)) {
+  display: none;
+}
+
 .test__input {
   width: 100%;
   height: 50px;
@@ -1132,8 +1136,10 @@ input[type="radio"] {
 }
 
 .card__button_final {
-  width: 100%;
+  width: 300px;
   margin: 34px 0 28px;
+  padding: 19px 0;
+  text-align: center;
 }
 
 .card-block:first-child .card__title {
@@ -1921,6 +1927,7 @@ input[type="radio"] {
     -ms-flex-preferred-size: 50px;
         flex-basis: 50px;
     width: 180px;
+    margin: auto;
     margin-bottom: 15px;
   }
 }
@@ -1943,6 +1950,9 @@ input[type="radio"] {
   }
   .request__description {
     line-height: 24px;
+  }
+  .request__link {
+    margin: 0 0 15px;
   }
 }
 
@@ -2044,5 +2054,88 @@ input[type="radio"] {
   }
   .footer__button:last-child {
     margin-top: 15px;
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 9999;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__cross {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  padding: 0;
+  border: none;
+  font-size: 32px;
+  background: none;
+  cursor: pointer;
+}
+
+.modal__cross:hover {
+  color: #8f8f8f;
+  background: none;
+}
+
+.offer__wrapper {
+  position: relative;
+  width: 1180px;
+  margin: auto;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.offer__text {
+  margin: 100px 25px 40px 100px;
+}
+
+.offer__text p, .offer__text ul {
+  max-width: 980px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #4a4a4a;
+}
+
+.offer__title {
+  text-align: center;
+}
+
+.offer__button {
+  display: block;
+  max-width: 480px;
+  width: 100%;
+  padding: 18px 0;
+  margin: 0 auto 50px;
+}
+
+@media (max-width: 1200px) {
+  .offer__wrapper {
+    margin: auto 15px;
+  }
+  .offer__text {
+    margin: 60px 15px 40px 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .offer__text {
+    margin: 40px 5px 20px 15px;
+  }
+  .offer__text p {
+    font-size: 14px;
+  }
+  .offer__button {
+    max-width: 270px;
+  }
+  .offer__cross {
+    top: 5px;
+    right: 10px;
   }
 }
