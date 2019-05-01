@@ -16,9 +16,43 @@
     font-size: 32px
     background: none
     cursor: pointer
+    outline-style: none
     &:hover
       color: $text-grey
       background: none
+  &-request
+    display: flex
+    &__wrapper
+      position: relative
+      max-width: 1180px
+      width: 100%
+      margin: auto
+      background: #ffffff
+      box-shadow: none
+    &__image
+      padding: 50px 65px 0
+      border-top-left-radius: 6px
+      border-bottom-left-radius: 6px
+      background: url("../img/request/iphone2.png"), #e3eaf0
+      background-repeat: no-repeat
+      background-position: 50% 100%
+    &__title
+      display: block
+      max-width: 350px
+      margin: 0
+      margin-left: 13px
+      margin-bottom: 55px
+    &__subtitle
+      max-width: 430px
+      margin: 0 0 26px
+      font-size: 24px
+      line-height: 34px
+    &-block
+      max-width: 480px
+      width: 100%
+      margin: 62px 60px
+    &__link
+      flex-basis: 147px
 
 .offer
   &__wrapper
@@ -44,11 +78,28 @@
     margin: 0 auto 50px
 
 @media (max-width: 1200px)
+  .modal
+    &-request
+      &-block
+        padding: 0
+      &__image
+        background-size: 34vw
+      &__wrapper
+        margin: auto 15px
   .offer
     &__wrapper
       margin: auto 15px
     &__text
       margin: 60px 15px 40px 60px
+
+@media (max-width: 991px)
+  .modal
+    &-request
+      &__image
+        display: none
+      &-block
+        margin: auto
+        padding: 80px 0
 
 @media (max-width: 768px)
   .offer
@@ -61,3 +112,18 @@
     &__cross
       top: 5px
       right: 10px
+  .modal
+    &-request
+      &-block
+        padding: 40px 0
+      &__link
+        flex-basis: 50px
+
+@media (max-width: 576px)
+  .modal
+    &-request
+      &__wrapper
+        margin: auto 0
+      &-block
+        max-width: 290px
+        padding: 20px 0

@@ -58,9 +58,9 @@ window.addEventListener('DOMContentLoaded', function () {
     input.value = value; // выводим результат
   }
 
-  let btnSubmit = document.querySelector('.card__button_submit');
+  let btnSubmit = document.querySelector('.card__button_submit'); // удалить после наладки валидации
 
-  btnSubmit.addEventListener('click', function (event) {
+  btnSubmit.addEventListener('click', function (event) { // удалить после наладки валидации
     event.preventDefault();
     card[4].style.display = "none";
     card[5].style.display = "grid";
@@ -77,24 +77,45 @@ window.addEventListener('DOMContentLoaded', function () {
     */
     $('html, body').animate({ scrollTop: dn }, 1000);
   });
-  // прокрутка модального окна
+  // скроллбар модального окна
   $(".content").mCustomScrollbar(
     {
       setHeight: 440
     }
   );
   // модальные окна
-  let offerBtnClose = document.querySelector('.offer__cross'),
-      offerBtnClose2 = document.querySelector('.offer__button'),
+  let offerBtnClose = document.querySelector('.offer__button'),
       offer = document.querySelector('.offer'),
-      offerLinks = document.querySelectorAll('a[href="#offer"]');
+      offerLinks = document.querySelectorAll('a[href="#offer"]'),
+      btnClose = document.querySelectorAll('.modal__cross'),
+      modals = document.querySelectorAll('.modal'),
+      phoneLink = document.querySelector('.navbar-phone__link'),
+      heroBtn = document.querySelector('.hero__button'),
+      request = document.querySelector('.modal-request');
+
+
+  btnClose.forEach(function (item, i) {
+    item.addEventListener('click', function () {
+      modalClose(modals[i]);
+    });
+  });
+
+  offerLinks.forEach(function (item) {
+    item.addEventListener('click', function () {
+      modalOpen(offer);
+    });
+  });
 
   offerBtnClose.addEventListener('click', function () {
     modalClose(offer);
   });
 
-  offerBtnClose2.addEventListener('click', function () {
-    modalClose(offer);
+  heroBtn.addEventListener('click', function () {
+    modalOpen(request);
+  });
+
+  phoneLink.addEventListener('click', function () {
+    modalOpen(request);
   });
 
   function modalClose(elem) {
@@ -105,9 +126,4 @@ window.addEventListener('DOMContentLoaded', function () {
     elem.style.display = "flex";
   }
 
-  offerLinks.forEach(function (item) {
-    item.addEventListener('click', function () {
-      modalOpen(offer);
-    });
-  });
 });
