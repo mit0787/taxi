@@ -972,9 +972,67 @@ input[type="radio"] {
   display: grid;
   -ms-grid-columns: minmax(0, 540px) minmax(280px, 640px);
       grid-template-columns: minmax(0, 540px) minmax(280px, 640px);
+  -ms-grid-rows: 505px;
+      grid-template-rows: 505px;
   -webkit-box-shadow: 0 10px 67px 4px rgba(0, 0, 0, 0.1);
           box-shadow: 0 10px 67px 4px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
+}
+
+.test__input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  padding-left: 19px;
+  border-radius: 6px;
+  border: 1px solid #e4e4e4;
+}
+
+.test__checkbox {
+  display: none;
+}
+
+.test__accept {
+  position: relative;
+  display: block;
+  max-width: 440px;
+  margin-top: 24px;
+  margin-bottom: 21px;
+  padding-left: 45px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.test__accept a {
+  display: inline-block;
+  color: #047acb;
+}
+
+.test__accept a:hover {
+  color: #0898fa;
+}
+
+.test__accept::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid #e4e4e4;
+  cursor: pointer;
+}
+
+.test__checkbox:checked + label::before {
+  background: url("../img/request/icon_check.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.input__wrapper {
+  max-width: 440px;
 }
 
 .card__image {
@@ -989,7 +1047,8 @@ input[type="radio"] {
 
 .card__image img {
   margin: auto;
-  width: 253px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .card__number {
@@ -1005,6 +1064,7 @@ input[type="radio"] {
   position: relative;
   top: 71px;
   left: 8px;
+  margin-right: 20px;
   font-family: 'Yandex Sans Text Thin', sans-serif;
   font-size: 140px;
   font-weight: 400;
@@ -1037,7 +1097,6 @@ input[type="radio"] {
 }
 
 .card__title {
-  width: 300px;
   margin: 0 0 42px;
   font-size: 24px;
   line-height: 34px;
@@ -1045,6 +1104,7 @@ input[type="radio"] {
 }
 
 .card__label {
+  display: block;
   color: #4a4a4a;
   font-weight: 400;
 }
@@ -1063,13 +1123,69 @@ input[type="radio"] {
   padding: 0;
 }
 
+.card__button_prev {
+  margin-right: 15px;
+}
+
+.card__button_submit {
+  width: 100%;
+}
+
+.card__button_final {
+  width: 100%;
+  margin: 34px 0 28px;
+}
+
+.card-block:first-child .card__title {
+  max-width: 300px;
+}
+
+.card-block:nth-child(3), .card-block:nth-child(4) {
+  -ms-grid-rows: 565px;
+      grid-template-rows: 565px;
+}
+
+.card-block:nth-child(3) .card__label, .card-block:nth-child(4) .card__label {
+  display: inline-block;
+  width: 198px;
+}
+
+.card-block:nth-child(4) .card__buttons {
+  margin-top: 25px;
+}
+
+.card__final {
+  line-height: 26px;
+  font-weight: 400;
+  color: #8f8f8f;
+}
+
+.card__final br {
+  display: none;
+}
+
+.card__final span {
+  color: #000000;
+  font-weight: 600;
+}
+
+.card__link {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #047acb;
+}
+
+.card__link:hover {
+  color: #0898fa;
+}
+
 .card__input:checked + label,
 .card__input:not(:checked) + label {
   position: relative;
   padding-left: 50px;
   cursor: pointer;
   line-height: 20px;
-  display: inline-block;
 }
 
 .card__input:checked + label:before,
@@ -1109,6 +1225,12 @@ input[type="radio"] {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+@media (max-width: 1200px) {
+  .card__image img {
+    width: 70%;
+  }
 }
 
 @media (max-width: 991px) {
@@ -1167,19 +1289,33 @@ input[type="radio"] {
     max-width: 230px;
     margin-bottom: 30px;
   }
-  .card__label:not(:last-of-type) {
-    margin-bottom: 15px;
-  }
   .card__buttons {
     margin-top: 45px;
   }
-  .card__input:checked + label:before,
-  .card__input:not(:checked) + label:before {
+  .card-block {
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
+  .card-block:first-child .card__input:checked + label:before,
+  .card-block:first-child .card__input:not(:checked) + label:before {
     top: 5px;
   }
-  .card__input:checked + label:after,
-  .card__input:not(:checked) + label:after {
+  .card-block:first-child .card__input:checked + label:after,
+  .card-block:first-child .card__input:not(:checked) + label:after {
     top: 16px;
+  }
+  .card-block:first-child .card__label:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+  .card-block:nth-child(3), .card-block:nth-child(4) {
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
+  .card__button_prev {
+    margin-bottom: 15px;
+  }
+  .card__final br {
+    display: block;
   }
 }
 

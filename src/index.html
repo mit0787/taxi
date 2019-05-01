@@ -106,20 +106,20 @@
           <span class="section__subtitle test__subtitle">размер вашего заработка</span>
           <h2 class="section__title test__title">Пройдите тест и узнайте, сколько вы заработаете с Яндекс.Такси</h2>
         </div>
-        <form>
+        <div class="test__wrapper">
           <div class="test__card card-block">
             <div class="card__image">
               <span class="card__number"><span>01</span>/04</span>
-              <img src="./img/test/car.png" alt="">
+              <img src="./img/test/carkey.png" alt="">
             </div>
             <!-- /.card__image -->
             <div class="card__text">
               <span class="card__number_small">1<span>/4</span></span>
               <div class="card__line"></div>
               <h3 class="card__title">Был ли у вас опыт работы в Яндекс.Такси ранее?</h3>
-              <input type="radio" name="car" class="card__input" id="answer-1" checked>
+              <input type="radio" name="experience" class="card__input" id="answer-1" checked>
               <label for="answer-1" class="card__label">Да, я работал с Яндекс.Такси ранее</label>
-              <input type="radio" name="car" class="card__input" id="answer-2">
+              <input type="radio" name="experience" class="card__input" id="answer-2">
               <label for="answer-2" class="card__label">У меня нет опыта работы с Яндекс.Такси</label>
               <div class="card__buttons">
                 <input type="button" class="button card__button" value="Далее">
@@ -128,7 +128,138 @@
             <!-- /.card__text -->
           </div>
           <!-- /.test__card -->
-        </form>
+
+          <div class="test__card card-block">
+            <div class="card__image">
+              <span class="card__number"><span>02</span>/04</span>
+              <img src="./img/test/cars.png" alt="">
+            </div>
+            <!-- /.card__image -->
+            <div class="card__text">
+              <span class="card__number_small">2<span>/4</span></span>
+              <div class="card__line"></div>
+              <h3 class="card__title">Планируете работать на своем
+                автомобиле или арендованном?</h3>
+              <input type="radio" name="car" class="card__input" id="answer-3" checked>
+              <label for="answer-3" class="card__label">На своем автомобиле</label>
+              <input type="radio" name="car" class="card__input" id="answer-4">
+              <label for="answer-4" class="card__label">На арендованном</label>
+              <div class="card__buttons">
+                <input type="button" class="button button_light card__button card__button_prev" value="Назад">
+                <input type="button" class="button card__button card__button_next" value="Далее">
+              </div>
+            </div>
+            <!-- /.card__text -->
+          </div>
+          <!-- /.test__card -->
+
+          <div class="test__card card-block">
+            <div class="card__image">
+              <span class="card__number"><span>03</span>/04</span>
+              <img src="./img/test/oil.png" alt="">
+            </div>
+            <!-- /.card__image -->
+            <div class="card__text">
+              <span class="card__number_small">3<span>/4</span></span>
+              <div class="card__line"></div>
+              <h3 class="card__title">Какой у вас расход топлива по городу
+                (л/100 км)?</h3>
+              <div class="input__wrapper">
+                <input type="radio" name="fuel" class="card__input" id="answer-5" checked>
+                <label for="answer-5" class="card__label">6-8 л / 100 км</label>
+                <input type="radio" name="fuel" class="card__input" id="answer-6">
+                <label for="answer-6" class="card__label">6-8 л / 100 км</label>
+                <input type="radio" name="fuel" class="card__input" id="answer-7" checked>
+                <label for="answer-7" class="card__label">6-8 л / 100 км</label>
+                <input type="radio" name="fuel" class="card__input" id="answer-8">
+                <label for="answer-8" class="card__label">6-8 л / 100 км</label>
+                <input type="radio" name="fuel" class="card__input" id="answer-9" checked>
+                <label for="answer-9" class="card__label">6-8 л / 100 км</label>
+              </div>
+              <div class="card__buttons">
+                <input type="button" class="button button_light card__button card__button_prev" value="Назад">
+                <input type="button" class="button card__button card__button_next" value="Далее">
+              </div>
+            </div>
+            <!-- /.card__text -->
+          </div>
+          <!-- /.test__card -->
+
+          <div class="test__card card-block">
+            <div class="card__image">
+              <span class="card__number"><span>04</span>/04</span>
+              <img src="./img/test/notepad.png" alt="">
+            </div>
+            <!-- /.card__image -->
+            <div class="card__text">
+              <span class="card__number_small">4<span>/4</span></span>
+              <div class="card__line"></div>
+              <h3 class="card__title">Сколько часов планируете быть
+                на смене?</h3>
+              <div class="input__wrapper">
+                <input type="radio" name="time" class="card__input" id="answer-10" checked>
+                <label for="answer-10" class="card__label">1-2 часа</label>
+                <input type="radio" name="time" class="card__input" id="answer-11">
+                <label for="answer-11" class="card__label">6-8 часов</label>
+                <input type="radio" name="time" class="card__input" id="answer-12" checked>
+                <label for="answer-12" class="card__label">2-4 часа</label>
+                <input type="radio" name="time" class="card__input" id="answer-13">
+                <label for="answer-13" class="card__label">8-10 часов</label>
+                <input type="radio" name="time" class="card__input" id="answer-14" checked>
+                <label for="answer-14" class="card__label">4-6 часов</label>
+                <input type="radio" name="time" class="card__input" id="answer-15" checked>
+                <label for="answer-15" class="card__label">10-12 часов</label>
+              </div>
+              <div class="card__buttons">
+                <input type="button" class="button button_light card__button card__button_prev" value="Назад">
+                <input type="button" class="button card__button card__button_next" value="Далее">
+              </div>
+            </div>
+            <!-- /.card__text -->
+          </div>
+          <!-- /.test__card -->
+
+          <div class="test__card card-block">
+            <div class="card__image">
+              <img src="./img/test/round-cars.png" alt="">
+            </div>
+            <!-- /.card__image -->
+            <div class="card__text">
+              <div class="card__line"></div>
+              <h3 class="card__title">Тест пройден! Укажите номер телефона,
+                и мы вышлем результаты</h3>
+              <form action="POST">
+                <input type="text" class="test__input" name="phone" id="test-phone">
+                <input type="submit" class="button card__button card__button_submit" value="Отправить">
+                <input class="test__checkbox" type="checkbox" name="" id="accept">
+                <label for="accept" class="test__accept">Принимаю (акцептую) <a href="#">договор оферту (агентский
+                    договор)</a>
+                  и согласен на <a href="#">обработку персональных данных</a></label>
+              </form>
+          </div>
+          <!-- /.card__text -->
+        </div>
+        <!-- /.test__card -->
+
+        <div class="test__card card-block">
+          <div class="card__image">
+            <img src="./img/test/round-cars-check.png" alt="">
+          </div>
+          <!-- /.card__image -->
+          <div class="card__text">
+            <h3 class="card__title">Результаты отправлены!</h3>
+            <p class="card__final">Мы выслали на номер <br><span>8 (917) 00-00-000</span> размер вашего
+                потенциального заработка в команде Яндекс.Такси.
+                Чтобы начать зарабатывать, достаточно выполнить
+                4 простых шага</p>
+            <input type="button" class="button card__button card__button_final" value="Как начать зарабатывать">
+            <a class="card__link" href="#">Не пришло смс? Повторная отправка через <span>2:59</span></a>
+          </div>
+        </div>
+        <!-- /.card__text -->
+      </div>
+      <!-- /.test__card -->
+      </div>
       </div>
       <!-- /.container -->
     </section>
@@ -225,7 +356,7 @@
               <input class="request__input" type="text" name="name" placeholder="Имя">
               <input class="request__input" type="text" name="phone" placeholder="Номер телефона">
               <input class="request__input" type="text" name="city" placeholder="Город">
-              <input class="button request__button" type="button" value="отправить">
+              <input class="button request__button" type="submit" value="отправить">
               <input class="request__checkbox" type="checkbox" name="" id="accept">
               <label for="accept" class="request__accept">Принимаю (акцептую) <a href="#">договор оферту (агентский
                   договор)</a>
@@ -236,9 +367,12 @@
               <p class="request__phone">Или свяжитесь с нами самостоятельно: <a href="tel:8(903)000-00-00">8 (903)
                   000-00-00</a></p>
               <div class="request__links">
-                <a href="" class="button button_light request__link"><img src="./img/request/icon_whatsapp.svg" alt="">watsapp</a>
-                <a href="" class="button button_light request__link"><img src="./img/request/icon_viber.svg" alt="">viber</a>
-                <a href="" class="button button_light request__link"><img src="./img/request/icon_telegram.svg" alt="">telegram</a>
+                <a href="" class="button button_light request__link"><img src="./img/request/icon_whatsapp.svg"
+                    alt="">watsapp</a>
+                <a href="" class="button button_light request__link"><img src="./img/request/icon_viber.svg"
+                    alt="">viber</a>
+                <a href="" class="button button_light request__link"><img src="./img/request/icon_telegram.svg"
+                    alt="">telegram</a>
               </div>
             </div>
           </div>
