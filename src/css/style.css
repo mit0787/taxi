@@ -2086,9 +2086,7 @@ input[type="radio"] {
 }
 
 .modal-request {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
 }
 
 .modal-request__wrapper {
