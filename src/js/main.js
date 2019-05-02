@@ -1,6 +1,21 @@
 'use strict';
 
 window.addEventListener('DOMContentLoaded', function () {
+  // скроллбар модального окна
+  $(".offer__text").mCustomScrollbar({
+    setHeight: 440,
+    theme: 'dark'
+  });
+
+  // плавная прокрутка
+  $('.go-anchor').on('click', function (event) {
+    event.preventDefault();
+    var sc = $(this).attr("href"), // заносим информацию о том, к какому блоку надо перейти
+      dn = $(sc).offset().top; // определяем положение блока на странице
+    $('html, body').animate({
+      scrollTop: dn
+    }, 1000);
+  });
 
   // выпадающее меню
   let btnMenu = document.querySelector('.navbar__icon'),
@@ -15,83 +30,15 @@ window.addEventListener('DOMContentLoaded', function () {
     btnBlock.style.transform = "translateX(-260px)";
   });
 
-  // тест
-  let card = document.querySelectorAll(".test__card"); //создаем массив с карточками-вопросами из теста
-
-  for (let j = 0; j < card.length; j++) { // цикл по перебору карточек
-    let btnNext = card[j].querySelector('.card__button_next'), // кнопка "Далее"
-      btnPrev = card[j].querySelector('.card__button_prev'), // кнопка "Назад"
-      cardLink = card[j].querySelector('.card__link');
-    if (btnNext) { // проверка, что в карточке есть кнопка "Далее"
-      nextCard(j, btnNext);
-    }
-    if (btnPrev) { // проверка, что в карточке есть кнопка "Назад"
-      prevCard(j, btnPrev);
-    }
-    if (cardLink) {
-      cardLink.addEventListener('click', function (event) {
-        event.preventDefault();
-        card[j].style.display = "none";
-        card[j - 1].style.display = "grid";
-      });
-    }
-  }
-
-  function nextCard(index, btn) {
-    btn.addEventListener('click', function () { // переход к следующей карточке
-      if (index === (card.length - 3)) { // вывод результата на последней карточке
-        calc();
-      }
-      card[index].style.display = "none";
-      card[index + 1].style.display = "grid";
-    });
-  }
-
-  function prevCard(index, btn) {
-    btn.addEventListener('click', function () { // переход к предыдущей карточке
-      card[index].style.display = "none";
-      card[index - 1].style.display = "grid";
-    });
-  }
-
-  function calc() { // функция расчета
-    let input = document.querySelector('input[name="result"]'), // получаем инпут, в который будем выводить результат
-      value = 0;
-    for (let j = 0; j < (card.length - 1); j++) { // перебираем карточки
-      let radio = card[j].querySelector('input[type="radio"]:checked'); // получаем отмеченную в карточке радио-точку
-      if (radio) { // проверяем на наличие отмеченной точки
-        value += +radio.value; // прибавляем значение радио-точки
-      }
-    }
-    input.value = value; // выводим результат
-  }
-
-  let btnSubmit = document.querySelector('.card__button_submit'); // удалить после настройки отправки формы
-
-  btnSubmit.addEventListener('click', function (event) { // удалить после настройки отправки формы
-    event.preventDefault();
-    card[4].style.display = "none";
-    card[5].style.display = "grid";
-  });
-
-  // плавная прокрутка
-  $('.go-anchor').on('click', function (event) {
-    event.preventDefault();
-    var sc = $(this).attr("href"),
-      dn = $(sc).offset().top;
-    /*
-    * sc - в переменную заносим информацию о том, к какому блоку надо перейти
-    * dn - определяем положение блока на странице
-    */
-    $('html, body').animate({ scrollTop: dn }, 1000);
-  });
-  // скроллбар модального окна
-  $(".content").mCustomScrollbar(
-    {
-      setHeight: 440
-    }
-  );
   // модальные окна
+  function modalClose(elem) { // функция закрытия
+    elem.style.display = "none";
+  }
+
+  function modalOpen(elem) { // функция открытия
+    elem.style.display = "flex";
+  }
+
   let offerBtnClose = document.querySelector('.offer__button'),
       offer = document.querySelector('.offer'),
       offerLinks = document.querySelectorAll('a[href="#offer"]'),
@@ -103,49 +50,117 @@ window.addEventListener('DOMContentLoaded', function () {
       submitBtn = document.querySelectorAll('.request__button'),
       confirm = document.querySelector('.confirm'),
       callBtn = document.querySelector('.footer__call'),
-      callManager = document.querySelector('.call-manager');
+      callManager = document.querySelector('.call-manager'),
+      footerBtn = document.querySelector('.footer__details'),
+      details = document.querySelector('.details'),
+      detailsConfirm = document.querySelector('.details-confirm');
 
-  btnClose.forEach(function (item, i) {
+  btnClose.forEach(function (item, i) { // закрытие модальных окон
     item.addEventListener('click', function () {
       modalClose(modals[i]);
     });
   });
 
-  offerLinks.forEach(function (item) {
+  offerLinks.forEach(function (item) { // открытие договора оферты
     item.addEventListener('click', function () {
       modalOpen(offer);
     });
   });
 
-  offerBtnClose.addEventListener('click', function () {
+  offerBtnClose.addEventListener('click', function () { // закрытие договора оферты
     modalClose(offer);
   });
 
-  heroBtn.addEventListener('click', function () {
+  heroBtn.addEventListener('click', function () { // открытие заявки из блока hero
     modalOpen(request);
   });
 
-  phoneLink.addEventListener('click', function () {
+  phoneLink.addEventListener('click', function () { // открытие заявки из навбара
     modalOpen(request);
   });
 
-  callBtn.addEventListener('click', function () {
+  callBtn.addEventListener('click', function () { // звонок директора
     modalOpen(callManager);
   });
 
-  submitBtn.forEach(function (item) { // удалить после настройки отправки формы
+  footerBtn.addEventListener('click', function () {
+    modalOpen(details);
+  });
+
+  // тест и реквизиты
+  let cardTest = document.querySelectorAll(".test__card"), //создаем массив с карточками-вопросами из теста
+    cardDeteails = document.querySelectorAll(".details__card"), // массив карточек из формы "Реквизиты"
+    cardLink = document.querySelector('.card__link');
+
+  prevCard(5, cardLink, cardTest);
+
+  cardTest.forEach(function (item, i, arr) {
+    cardSlider(item, i, arr);
+  });
+
+  cardDeteails.forEach(function (item, i, arr) {
+    cardSlider(item, i, arr);
+  });
+
+  function cardSlider(item, i, arr) {
+    let btnNext = item.querySelector('.card__button_next'), // кнопка "Далее"
+      btnPrev = item.querySelector('.card__button_prev'); // кнопка "Назад"
+    if (btnNext) {
+      nextCard(i, btnNext, arr);
+    }
+    if (btnPrev) {
+      prevCard(i, btnPrev, arr);
+    }
+  }
+
+  function nextCard(i, btn, arr) { // переход к следующей карточке
+    btn.addEventListener('click', function (event) {
+      event.preventDefault();
+      arr[i].style.display = "none";
+      arr[i + 1].style.display = "grid";
+    });
+  }
+
+  function prevCard(i, btn, arr) { // переход к предыдущей карточке
+    btn.addEventListener('click', function (event) {
+      event.preventDefault();
+      arr[i].style.display = "none";
+      arr[i - 1].style.display = "grid";
+    });
+  }
+
+  let input = document.querySelector('input[name="result"]'); // получаем инпут, в который будем выводить результат
+  function calc() { // функция расчета
+    let value = 0;
+    for (let j = 0; j < (cardTest.length - 1); j++) { // перебираем карточки
+      let radio = cardTest[j].querySelector('input[type="radio"]:checked'); // получаем отмеченную в карточке радио-точку
+      if (radio) { // проверяем на наличие отмеченной точки
+        value += +radio.value; // прибавляем значение радио-точки
+      }
+    }
+    input.value = value; // выводим результат
+  }
+
+  // код ниже удалить после настройки отправки формы
+  let btnSubmit = document.querySelector('.card__button_submit'),
+      detailsBtn = document.querySelector('.details__button_submit');
+
+  detailsBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    detailsConfirm.style.display = "flex";
+  });
+  
+  btnSubmit.addEventListener('click', function (event) {
+    event.preventDefault();
+    calc();
+    cardTest[4].style.display = "none";
+    cardTest[5].style.display = "grid";
+  });
+
+  submitBtn.forEach(function (item) {
     item.addEventListener('click', function (event) {
       event.preventDefault();
       modalOpen(confirm);
     });
   });
-
-  function modalClose(elem) {
-    elem.style.display = "none";
-  }
-
-  function modalOpen(elem) {
-    elem.style.display = "flex";
-  }
-
 });

@@ -2122,6 +2122,10 @@ input[type="radio"] {
   background: none;
 }
 
+.modal-request {
+  overflow-y: auto;
+}
+
 .modal-request__wrapper {
   position: relative;
   max-width: 1180px;
@@ -2168,7 +2172,7 @@ input[type="radio"] {
 }
 
 .offer {
-  overflow-y: auto;
+  z-index: 200;
 }
 
 .offer__wrapper {
@@ -2493,9 +2497,7 @@ input[type="radio"] {
 }
 
 .details-confirm {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  z-index: 250;
 }
 
 .details-confirm__wrapper {

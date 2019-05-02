@@ -400,7 +400,7 @@
         <div class="footer__buttons">
           <button class="button button_light footer__button footer__call">звонок директору</button>
           <button class="button button_light footer__button">взять авто в аренду</button>
-          <button class="button button_light footer__button">передать реквизиты</button>
+          <button class="button button_light footer__button footer__details">передать реквизиты</button>
         </div>
         <!-- /.footer__buttons -->
       </div>
@@ -412,7 +412,7 @@
   <div class="modal offer" id="offer">
     <div class="offer__wrapper">
       <button class="modal__cross offer__cross">&times;</button>
-      <div class="offer__text mCustomScrollbar" data-mcs-theme="dark">
+      <div class="offer__text">
         <h2 class="section__title offer__title">Договор-оферта</h2>
         <p>Администрация сайта, именуемая далее «Агент» публикует настоящий Договор-оферту, далее
           «Договор», представляющий собой публичную оферту по смыслу ст. 437 Гражданского кодекса Российской Федерации в
@@ -901,7 +901,7 @@
           <input type="radio" class="card__input" name="money" id="money-2">
           <label for="money-2" class="card__label details__label">Перевод на карту третьего лица</label>
           <div class="details__buttons">
-            <button class="button details__button details__button_next">Далее</button>
+            <button class="button details__button card__button_next">Далее</button>
           </div>
           <p class="details__confirm">Отправляя настоящую заявку Вы подтверждаете, что в рамках заключенного
             Договора-оферты Вы просите Агента перечислять все причитающиеся Вам как Принципалу денежные средства по
@@ -924,8 +924,8 @@
           <input type="text" class="details__input request__input" name="phone" id="details-phone"
             placeholder="Телефон">
           <div class="details__buttons">
-            <button class="button button_light details__button details__button_prev">Назад</button>
-            <button class="button details__button details__button_next">Далее</button>
+            <button class="button button_light details__button card__button_prev">Назад</button>
+            <button class="button details__button card__button_next">Далее</button>
           </div>
         </div>
         <!-- .details__card -->
@@ -949,7 +949,7 @@
           <input type="text" class="details__input request__input" name="card-number" id="card-number" placeholder="Номер карты">
           <label for="card-number" class="details-input__label">Не путать с лицевым счётом, номер карты указан на самой карте</label>
           <div class="details__buttons">
-            <button class="button button_light details__button details__button_prev">Назад</button>
+            <button class="button button_light details__button card__button_prev">Назад</button>
             <input type="submit" class="button details__button details__button_submit" value="Отправить">
           </div>
           <input class="request__checkbox" type="checkbox" id="details-accept">

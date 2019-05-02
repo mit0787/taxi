@@ -21,6 +21,7 @@
       color: $text-grey
       background: none
   &-request
+    overflow-y: auto
     &__wrapper
       position: relative
       max-width: 1180px
@@ -54,7 +55,7 @@
       flex-basis: 147px
 
 .offer
-  overflow-y: auto
+  z-index: 200
   &__wrapper
     position: relative
     width: 1180px
@@ -266,7 +267,7 @@
     letter-spacing: 0.72px
 
 .details-confirm
-  display: flex
+  z-index: 250
   &__wrapper
     position: relative
     max-width: 900px
