@@ -20,12 +20,20 @@ window.addEventListener('DOMContentLoaded', function () {
 
   for (let j = 0; j < card.length; j++) { // цикл по перебору карточек
     let btnNext = card[j].querySelector('.card__button_next'), // кнопка "Далее"
-      btnPrev = card[j].querySelector('.card__button_prev'); // кнопка "Назад"
+      btnPrev = card[j].querySelector('.card__button_prev'), // кнопка "Назад"
+      cardLink = card[j].querySelector('.card__link');
     if (btnNext) { // проверка, что в карточке есть кнопка "Далее"
       nextCard(j, btnNext);
     }
     if (btnPrev) { // проверка, что в карточке есть кнопка "Назад"
       prevCard(j, btnPrev);
+    }
+    if (cardLink) {
+      cardLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        card[j].style.display = "none";
+        card[j - 1].style.display = "grid";
+      });
     }
   }
 

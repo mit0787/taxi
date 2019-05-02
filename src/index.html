@@ -229,7 +229,7 @@
               <div class="card__line"></div>
               <h3 class="card__title">Тест пройден! Укажите номер телефона,
                 и мы вышлем результаты</h3>
-              <form action="POST">
+              <form action="#" class="test__form">
                 <input type="text" class="test__input" name="phone" id="test-phone">
                 <input type="hidden" name="result" value="0">
                 <input type="submit" class="button card__button card__button_submit" value="Отправить">
@@ -806,7 +806,7 @@
           <!-- /.request__title -->
         </div>
         <!-- /.request__text -->
-        <form action="#" class="request__form">
+        <form action="#" class="modal-request__form">
           <input class="request__input" type="text" name="name" placeholder="Имя">
           <input class="request__input" type="text" name="phone" placeholder="Номер телефона">
           <input class="request__input" type="text" name="city" placeholder="Город">
@@ -837,11 +837,11 @@
   <div class="modal confirm">
     <div class="confirm__wrapper">
       <div class="confirm__text">
-          <button class="modal__cross confirm__cross">&times;</button>
+        <button class="modal__cross confirm__cross">&times;</button>
         <h2 class="section__title confirm__title">Спасибо!</h2>
-        <p class="confirm__description">Мы получили вашу заявку 
-            и перезвоним в течение 15 минут, 
-            чтобы обсудить детали</p>
+        <p class="confirm__description">Мы получили вашу заявку
+          и перезвоним в течение 15 минут,
+          чтобы обсудить детали</p>
       </div>
     </div>
   </div>
@@ -850,23 +850,25 @@
     <div class="call-manager__wrapper">
       <button class="modal__cross call-manager__cross">&times;</button>
       <div class="call-manager__photo">
-        <span class="call-manager__name">Фамилия  и имя</span>
+        <span class="call-manager__name">Фамилия и имя</span>
         <div class="call-manager__image"><img src="./img/modal/photo.png" alt=""></div>
       </div>
       <div class="call-manager-block">
         <div class="call-manager__text">
           <h2 class="section__title call-manager__title">Заявка на звонок
-              директора</h2>
-          <p class="call-manager__description">Есть вопрос, который хотите обсудить с директором 
-              напрямую? Оставьте заявку,  и Имя Фамилия свяжется 
-              с вами в течение ???????</p>
+            директора</h2>
+          <p class="call-manager__description">Есть вопрос, который хотите обсудить с директором
+            напрямую? Оставьте заявку, и Имя Фамилия свяжется
+            с вами в течение ???????</p>
         </div>
         <form action="#" class="call-manager__form">
           <input type="text" class="call-manager__input request__input" name="name" id="call-name" placeholder="Имя">
-          <input type="text" class="call-manager__input request__input" name="phone" id="call-phone" placeholder="Номер телефона">
+          <input type="text" class="call-manager__input request__input" name="phone" id="call-phone"
+            placeholder="Номер телефона">
           <input type="submit" class="button call-manager__button" value="Отправить">
           <input class="request__checkbox" type="checkbox" id="call-manager-accept">
-          <label for="call-manager-accept" class="request__accept call-manager__accept">Принимаю (акцептую) <a href="#offer">договор оферту
+          <label for="call-manager-accept" class="request__accept call-manager__accept">Принимаю (акцептую) <a
+              href="#offer">договор оферту
               (агентский договор)</a>
             и согласен на <a href="#">обработку персональных данных</a></label>
         </form>
@@ -874,6 +876,107 @@
     </div>
   </div>
 
+  <div class="modal details">
+    <div class="details__wrapper">
+      <button class="modal__cross call-manager__cross">&times;</button>
+      <div class="details__text">
+        <h2 class="details__title section__title">Анкета водителя</h2>
+        <span class="details__subtitle">Передайте нам платежные реквизиты за 3 простых шага
+        </span>
+      </div>
+      <form class="details-form">
+        <div class="details__card details-card">
+          <div class="details__progress progress">
+            <span class="progress__number">1<span>/3</span></span>
+            <div class="progress__line"></div>
+            <div class="progress__list">
+              <span class="progress__item">получатель</span>
+              <span class="progress__item">контактные данные</span>
+              <span class="progress__item">реквизиты</span>
+            </div>
+          </div>
+          <h3 class="details-card__title">Кто будет получать деньги?</h3>
+          <input type="radio" class="card__input" name="money" id="money-1">
+          <label for="money-1" class="card__label details__label">Перевод на мою карту</label>
+          <input type="radio" class="card__input" name="money" id="money-2">
+          <label for="money-2" class="card__label details__label">Перевод на карту третьего лица</label>
+          <div class="details__buttons">
+            <button class="button details__button details__button_next">Далее</button>
+          </div>
+          <p class="details__confirm">Отправляя настоящую заявку Вы подтверждаете, что в рамках заключенного
+            Договора-оферты Вы просите Агента перечислять все причитающиеся Вам как Принципалу денежные средства по
+            указанным в заявке реквизитам.</p>
+        </div>
+        <!-- .details__card -->
+        <div class="details__card details-card">
+          <div class="details__progress progress">
+            <span class="progress__number">2<span>/3</span></span>
+            <div class="progress__line"></div>
+            <div class="progress__list">
+              <span class="progress__item">получатель</span>
+              <span class="progress__item">контактные данные</span>
+              <span class="progress__item">реквизиты</span>
+            </div>
+          </div>
+          <h3 class="details-card__title">Укажите контактные данные</h3>
+          <input type="text" class="details__input request__input" name="name" id="details-name" placeholder="Ваши ФИО">
+          <input type="text" class="details__input request__input" name="city" id="details-city" placeholder="Город">
+          <input type="text" class="details__input request__input" name="phone" id="details-phone"
+            placeholder="Телефон">
+          <div class="details__buttons">
+            <button class="button button_light details__button details__button_prev">Назад</button>
+            <button class="button details__button details__button_next">Далее</button>
+          </div>
+        </div>
+        <!-- .details__card -->
+        <div class="details__card details-card">
+          <div class="details__progress progress">
+            <span class="progress__number">3<span>/3</span></span>
+            <div class="progress__line"></div>
+            <div class="progress__list">
+              <span class="progress__item">получатель</span>
+              <span class="progress__item">контактные данные</span>
+              <span class="progress__item">реквизиты</span>
+            </div>
+          </div>
+          <h3 class="details-card__title">Укажите контактные данные</h3>
+          <input type="text" class="details__input request__input" name="name-holder" id="name-holder" placeholder="ФИО держателя карты">
+          <input type="text" class="details__input request__input" name="bank" id="bank" placeholder="Наименование банка">
+          <input type="text" class="details__input request__input" name="bic-bank" id="bic-bank" placeholder="БИК  банка">
+          <label for="bic-bank" class="details-input__label">Например, ПАО Сбербанк</label>
+          <input type="text" class="details__input request__input" name="account" id="account" placeholder="Лицевой счет">
+          <input type="text" class="details__input request__input" name="cor-account" id="cor-account" placeholder="Кор.счет">
+          <input type="text" class="details__input request__input" name="card-number" id="card-number" placeholder="Номер карты">
+          <label for="card-number" class="details-input__label">Не путать с лицевым счётом, номер карты указан на самой карте</label>
+          <div class="details__buttons">
+            <button class="button button_light details__button details__button_prev">Назад</button>
+            <input type="submit" class="button details__button details__button_submit" value="Отправить">
+          </div>
+          <input class="request__checkbox" type="checkbox" id="details-accept">
+          <label for="details-accept" class="details__accept request__accept">Принимаю (акцептую) <a href="#offer">договор оферту (агентский
+                  договор)</a> и согласен на <a href="#">обработку персональных данных</a></label>
+        </div>
+        <!-- .details__card -->
+        </form>
+    </div>
+  </div>
+
+  <div class="modal details-confirm">
+    <div class="details-confirm__wrapper">
+        <button class="modal__cross call-manager__cross">&times;</button>
+      <div class="details__progress details-confirm__progress">
+          <span class="progress__number">Готово!</span>
+          <div class="progress__line"></div>
+          <div class="progress__list">
+            <span class="progress__item">получатель</span>
+            <span class="progress__item">контактные данные</span>
+            <span class="progress__item">реквизиты</span>
+          </div>
+        </div>
+      <h2 class="details-confirm__title section__title">Мы получили 
+          ваши реквизиты</h2>
+    </div>
+  </div>
   <script src="./js/jquery-3.3.1.min.js"></script>
   <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="./js/main.js"></script>

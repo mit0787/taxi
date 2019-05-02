@@ -1,6 +1,6 @@
 .modal
   position: fixed
-  z-index: 9999
+  z-index: 100
   display: none
   top: 0
   left: 0
@@ -54,6 +54,7 @@
       flex-basis: 147px
 
 .offer
+  overflow-y: auto
   &__wrapper
     position: relative
     width: 1180px
@@ -163,6 +164,141 @@
     img
       width: 100%
 
+.details
+  overflow-y: auto
+  &__wrapper
+    position: relative
+    display: flex
+    flex-direction: column
+    max-width: 900px
+    width: 100%
+    margin: auto
+    padding: 100px 0
+    border-radius: 6px
+    background: #ffffff
+  &__text
+    max-width: 490px
+    width: 100%
+    margin: 0 auto 27px
+    text-align: center
+  &__title
+    margin: 0 0 25px
+  &__subtitle
+    color: $text-add
+    font-weight: 400
+    line-height: 26px
+  &-form
+    max-width: 540px
+    width: 100%
+    margin: auto
+  &__card
+    &:nth-child(1)
+      .progress__line
+        background: #e7e7e7
+      .progress__item:nth-child(1)
+        color: #000
+    &:nth-child(2)
+      display: none
+      .progress__line
+        background: rgb(4,122,203)
+        background: linear-gradient(90deg, rgba(4,122,203,1) 33%, rgba(231,231,231,1) 33%)
+      .progress__item:nth-child(2)
+        color: #000
+    &:nth-child(3)
+      display: none
+      .progress__line
+        background: rgb(4,122,203)
+        background: linear-gradient(90deg, rgba(4,122,203,1) 33.8%, rgba(231,231,231,1) 33.8%, rgba(231,231,231,1) 34%, rgba(4,122,203,1) 34%, rgba(4,122,203,1) 66%, rgba(231,231,231,1) 66%, rgba(231,231,231,1) 100%)
+      .progress__item:nth-child(3)
+        color: #000
+  &__buttons
+    display: flex
+  &__button
+    max-width: 160px
+    width: 100%
+    padding: 18px 0
+    &_prev
+      margin-right: 15px
+  &__confirm
+    display: block
+    margin: 35px 0 0
+    color: $text-add
+    font-size: 12px
+    font-weight: 400
+    line-height: 20px
+  &-input
+    &__label
+      display: block
+      margin: -10px 0 40px
+      font-size: 12px
+      font-weight: 400
+      color: $text-add
+  &-card
+    &__title
+      margin: 0 0 45px
+      font-size: 24px
+      letter-spacing: 0.3px
+  &__label:nth-of-type(2)
+    margin-bottom: 63px
+  &__accept
+    margin-top: 30px
+  
+.progress
+  margin-bottom: 72px
+  &__number
+    display: block
+    margin-bottom: 7px
+    font-size: 14px
+    span
+      color: $text-grey
+  &__line
+    width: 100%
+    height: 8px
+    margin-bottom: 20px
+    border-radius: 4px
+  &__list
+    display: flex
+    justify-content: space-between
+  &__item
+    color: $text-grey
+    font-size: 12px
+    text-transform: uppercase
+    letter-spacing: 0.72px
+
+.details-confirm
+  display: flex
+  &__wrapper
+    position: relative
+    max-width: 900px
+    width: 100%
+    margin: auto
+    padding: 104px 15px 132px
+    border-radius: 6px
+    background: #ffffff
+  &__progress
+    max-width: 540px
+    width: 100%
+    margin: 0 auto 70px
+    .progress__number
+      position: relative
+      margin-left: 24px
+      font-size: 18px
+      &::before
+        position: absolute
+        content: ''
+        width: 16px
+        height: 17px
+        top: 0
+        left: -24px
+        background: url("../img/icons/confirm.svg")
+    .progress__line
+      background: rgb(4,122,203)
+      background: linear-gradient(90deg, rgba(4,122,203,1) 33.8%, rgba(231,231,231,1) 33.8%, rgba(231,231,231,1) 34%, rgba(4,122,203,1) 34%, rgba(4,122,203,1) 66%, rgba(231,231,231,1) 66%, rgba(231,231,231,1) 66.2%, rgba(4,122,203,1) 66.2%, rgba(4,122,203,1) 100%)
+  &__title
+    max-width: 350px
+    margin: 0 auto
+    text-align: center
+
 @media (max-width: 1200px)
   .modal
     &-request
@@ -199,6 +335,21 @@
   .call-manager
     &-block
       padding: 40px 60px
+  .details
+    &__wrapper
+      margin: auto 15px
+      padding: 80px 15px
+    &__subtitle
+      font-size: 16px
+    &__progress
+      margin-bottom: 40px
+    &-card
+      &__title
+        font-size: 20px
+  .details-confirm
+    &__wrapper
+      padding: 80px 15px
+      margin: auto 15px
 
 @media (max-width: 768px)
   .offer
@@ -222,6 +373,9 @@
       display: none
     &-block
       margin: auto
+  .details
+    &__wrapper
+      padding: 40px 15px
 
 @media (max-width: 576px)
   .modal
@@ -242,3 +396,11 @@
       padding: 40px 10px
     &__description
       font-size: 14px
+  .details
+    &__wrapper
+      margin: auto 0
+  .progress
+    &__line
+      margin-bottom: 0
+    &__item
+      display: none
