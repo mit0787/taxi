@@ -1215,6 +1215,7 @@ input[type="radio"] {
   font-size: 14px;
   font-weight: 400;
   color: #047acb;
+  cursor: pointer;
 }
 
 .card__link:hover {
@@ -2429,7 +2430,7 @@ input[type="radio"] {
 }
 
 .details__confirm {
-  display: block;
+  display: none;
   margin: 35px 0 0;
   color: #4a4a4a;
   font-size: 12px;

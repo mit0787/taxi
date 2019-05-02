@@ -232,7 +232,7 @@
               <form action="#" class="test__form">
                 <input type="text" class="test__input" name="phone" id="test-phone">
                 <input type="hidden" name="result" value="0">
-                <input type="submit" class="button card__button card__button_submit" value="Отправить">
+                <input type="submit" class="button card__button card__button_submit" value="Отправить" disabled>
                 <input class="test__checkbox" type="checkbox" id="test-accept">
                 <label for="test-accept" class="test__accept">Принимаю (акцептую) <a href="#offer">договор оферту
                     (агентский
@@ -256,7 +256,7 @@
                 Чтобы начать зарабатывать, достаточно выполнить
                 4 простых шага</p>
               <a href="#steps" class="button card__button card__button_final go-anchor">Как начать зарабатывать</a>
-              <a class="card__link" href="#">Не пришло смс? Повторная отправка через <span>2:59</span></a>
+              <p class="card__link">Не пришло смс? Повторная отправка через <span id="timer">2:59</span></p>
             </div>
           </div>
           <!-- /.card__text -->
@@ -359,7 +359,7 @@
               <input class="request__input" type="text" name="name" placeholder="Имя">
               <input class="request__input" type="text" name="phone" placeholder="Номер телефона">
               <input class="request__input" type="text" name="city" placeholder="Город">
-              <input class="button request__button" type="submit" value="отправить">
+              <input class="button request__button" type="submit" value="отправить" disabled>
               <input class="request__checkbox" type="checkbox" id="accept">
               <label for="accept" class="request__accept">Принимаю (акцептую) <a href="#offer">договор оферту (агентский
                   договор)</a>
@@ -810,7 +810,7 @@
           <input class="request__input" type="text" name="name" placeholder="Имя">
           <input class="request__input" type="text" name="phone" placeholder="Номер телефона">
           <input class="request__input" type="text" name="city" placeholder="Город">
-          <input class="button request__button" type="submit" value="отправить">
+          <input class="button request__button" type="submit" value="отправить" disabled>
           <input class="request__checkbox" type="checkbox" id="modal-accept">
           <label for="modal-accept" class="request__accept">Принимаю (акцептую) <a href="#offer">договор оферту
               (агентский договор)</a>
@@ -865,7 +865,7 @@
           <input type="text" class="call-manager__input request__input" name="name" id="call-name" placeholder="Имя">
           <input type="text" class="call-manager__input request__input" name="phone" id="call-phone"
             placeholder="Номер телефона">
-          <input type="submit" class="button call-manager__button" value="Отправить">
+          <input type="submit" class="button call-manager__button" value="Отправить" disabled>
           <input class="request__checkbox" type="checkbox" id="call-manager-accept">
           <label for="call-manager-accept" class="request__accept call-manager__accept">Принимаю (акцептую) <a
               href="#offer">договор оферту
@@ -896,9 +896,9 @@
             </div>
           </div>
           <h3 class="details-card__title">Кто будет получать деньги?</h3>
-          <input type="radio" class="card__input" name="money" id="money-1">
+          <input type="radio" class="card__input details__input" name="money" id="money-1" checked>
           <label for="money-1" class="card__label details__label">Перевод на мою карту</label>
-          <input type="radio" class="card__input" name="money" id="money-2">
+          <input type="radio" class="card__input details__input" name="money" id="money-2">
           <label for="money-2" class="card__label details__label">Перевод на карту третьего лица</label>
           <div class="details__buttons">
             <button class="button details__button card__button_next">Далее</button>
@@ -950,7 +950,7 @@
           <label for="card-number" class="details-input__label">Не путать с лицевым счётом, номер карты указан на самой карте</label>
           <div class="details__buttons">
             <button class="button button_light details__button card__button_prev">Назад</button>
-            <input type="submit" class="button details__button details__button_submit" value="Отправить">
+            <input type="submit" class="button details__button details__button_submit" value="Отправить" disabled>
           </div>
           <input class="request__checkbox" type="checkbox" id="details-accept">
           <label for="details-accept" class="details__accept request__accept">Принимаю (акцептую) <a href="#offer">договор оферту (агентский
