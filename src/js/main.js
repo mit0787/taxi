@@ -190,15 +190,179 @@ window.addEventListener('DOMContentLoaded', function () {
 		}, 1000);
 	}
 
-	// код ниже для настройки отправки формы
-	let btnSubmit = document.querySelector('.card__button_submit'),
-		detailsBtn = document.querySelector('.details__button_submit');
+	// Валидация телефона
+	$("#test-phone").mask("8 (999) 999-999-99",{autoclear: false});
+	$("#request-phone").mask("8 (999) 999-999-99",{autoclear: false});
+	$("#modal-phone").mask("8 (999) 999-999-99",{autoclear: false});
+	$("#call-phone").mask("8 (999) 999-999-99",{autoclear: false});
+	$("#details-phone").mask("8 (999) 999-999-99",{autoclear: false});
 
-	detailsBtn.addEventListener('click', function (event) {
-		event.preventDefault();
-		detailsConfirm.style.display = "flex";
-		modalClose(details);
+	// валидация форм
+	$("#request-form").validate({
+    rules: {
+      username: {
+        required: true,
+        minlength: 2
+      },
+      phone: "required",
+			city:"required"
+    },
+    messages: {
+      username: {
+        required: "Заполните поле",
+        minlength: jQuery.validator.format("Длина имени не меньше {0} символов"),
+      },
+      phone: {
+        required: "Заполните поле"
+      },
+      city: {
+        required: "Заполните поле"
+      }
+		},
+		errorElement: "div",
+    submitHandler: function (form) {
+      event.preventDefault();
+      $.ajax({
+        url: 'mailer/smart.php',
+        type: 'POST',
+        data: $(form).serialize(),
+        success: function (data) {
+					modalOpen(confirm);
+          $('#request-username').val('');
+          $('#request-phone').val('');
+          $('#request-city').val('');
+        },
+        error: function (jqXHR, textStatus) {
+          console.log(jqXHR + ': ' + textStatus);
+        }
+      });
+    }
 	});
+	
+	$("#modal-form").validate({
+    rules: {
+      username: {
+        required: true,
+        minlength: 2
+      },
+      phone: "required",
+			city:"required"
+    },
+    messages: {
+      username: {
+        required: "Заполните поле",
+        minlength: jQuery.validator.format("Длина имени не меньше {0} символов"),
+      },
+      phone: {
+        required: "Заполните поле"
+      },
+      city: {
+        required: "Заполните поле"
+      }
+		},
+		errorElement: "div",
+    submitHandler: function (form) {
+      event.preventDefault();
+      $.ajax({
+        url: 'mailer/smart.php',
+        type: 'POST',
+        data: $(form).serialize(),
+        success: function (data) {
+					modalOpen(confirm);
+          $('#modal-username').val('');
+          $('#modal-phone').val('');
+					$('#modal-city').val('');
+					modalClose(request);
+        },
+        error: function (jqXHR, textStatus) {
+          console.log(jqXHR + ': ' + textStatus);
+        }
+      });
+    }
+	});
+	
+	$("#manager-form").validate({
+    rules: {
+      username: {
+        required: true,
+        minlength: 2
+      },
+      phone: "required"
+    },
+    messages: {
+      username: {
+        required: "Заполните поле",
+        minlength: jQuery.validator.format("Длина имени не меньше {0} символов"),
+      },
+      phone: {
+        required: "Заполните поле"
+      }
+		},
+		errorElement: "div",
+    submitHandler: function (form) {
+      event.preventDefault();
+      $.ajax({
+        url: 'mailer/smart.php',
+        type: 'POST',
+        data: $(form).serialize(),
+        success: function (data) {
+					modalOpen(confirm);
+          $('#call-username').val('');
+          $('#call-phone').val('');
+					modalClose(callManager);
+        },
+        error: function (jqXHR, textStatus) {
+          console.log(jqXHR + ': ' + textStatus);
+        }
+      });
+    }
+	});
+
+	$("#details-form").validate({
+    rules: {
+      username: {
+        required: true,
+        minlength: 2
+			},
+			city: "required",
+      phone: "required"
+    },
+    messages: {
+      username: {
+        required: "Заполните поле",
+        minlength: jQuery.validator.format("Длина имени не меньше {0} символов"),
+      },
+      phone: {
+        required: "Заполните поле"
+      }
+		},
+		errorElement: "div",
+    submitHandler: function (form) {
+      event.preventDefault();
+      $.ajax({
+        url: 'mailer/smart.php',
+        type: 'POST',
+        data: $(form).serialize(),
+        success: function (data) {
+					modalOpen(detailsConfirm);
+					modalClose(details);
+        },
+        error: function (jqXHR, textStatus) {
+          console.log(jqXHR + ': ' + textStatus);
+        }
+      });
+    }
+	});
+
+	// код ниже для настройки отправки формы
+	let btnSubmit = document.querySelector('.card__button_submit');
+	// 	detailsBtn = document.querySelector('.details__button_submit');
+
+	// detailsBtn.addEventListener('click', function (event) {
+	// 	event.preventDefault();
+	// 	detailsConfirm.style.display = "flex";
+	// 	modalClose(details);
+	// });
 
 	btnSubmit.addEventListener('click', function (event) {
 		event.preventDefault();
@@ -208,11 +372,11 @@ window.addEventListener('DOMContentLoaded', function () {
 		startTimer(180, timer);
 	});
 
-	submitBtn.forEach(function (item) {
-		item.addEventListener('click', function (event) {
-			event.preventDefault();
-			modalOpen(confirm);
-			modalClose(request);
-		});
-	});
+	// submitBtn.forEach(function (item) {
+	// 	item.addEventListener('click', function (event) {
+	// 		event.preventDefault();
+	// 		modalOpen(confirm);
+	// 		modalClose(request);
+	// 	});
+	// });
 });

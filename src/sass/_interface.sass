@@ -14,6 +14,11 @@ a
   &:hover
     color: $text-grey
 
+.error
+  margin-top: -15px
+  margin-bottom: 15px
+  font-size: 14px
+  font-weight: 400
 .container
   max-width: 1180px
   margin: auto
@@ -53,6 +58,9 @@ input[type="radio"]
     &:hover
       background: none
       color: $text-grey
+  &:disabled
+    background-color: #e3eaf0
+    color: #000
 
 @media (max-width: 1200px)
   .container

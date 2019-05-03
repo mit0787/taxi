@@ -20,12 +20,12 @@
         </div>
         <div class="navbar__links">
           <div class="navbar__phone">
-            <a class="navbar-phone__number" href="tel:+7(000)000-00-00">+7 (000) 000-00-00</a>
+            <a class="navbar-phone__number" href="tel:+7(987)253-54-28">+7 (987) 253-54-28</a>
             <a class="navbar-phone__link" href="#modal-request">Перезвоните мне</a>
           </div>
           <!-- /.navbar__phone -->
           <div class="navbar__buttons">
-            <a class="navbar-phone__number navbar-buttons__number" href="tel:+7(000)000-00-00">+7 (000) 000-00-00</a>
+            <a class="navbar-phone__number navbar-buttons__number" href="tel:+7(987)253-54-28">+7 (987) 253-54-28</a>
             <button class="button navbar__button">взять авто в аренду</button>
             <button class="button navbar__button">пройти обучение</button>
             <button class="button navbar__cross">&times;</button>
@@ -228,14 +228,13 @@
               <div class="card__line"></div>
               <h3 class="card__title">Тест пройден! Укажите номер телефона,
                 и мы вышлем результаты</h3>
-              <form action="#" class="test__form">
+              <form action="#" class="test__form" id="test-form">
                 <input type="text" class="test__input" name="phone" id="test-phone">
                 <input type="hidden" name="result" value="0">
                 <input type="submit" class="button card__button card__button_submit" value="Отправить" disabled>
                 <input class="test__checkbox" type="checkbox" id="test-accept">
                 <label for="test-accept" class="test__accept">Принимаю (акцептую) <a href="#offer">договор оферту
-                    (агентский
-                    договор)</a>
+                    (агентский договор)</a>
                   и согласен на <a href="#">обработку персональных данных</a></label>
               </form>
             </div>
@@ -354,10 +353,10 @@
               <!-- /.request__description -->
             </div>
             <!-- /.request__text -->
-            <form action="#" class="request__form">
-              <input class="request__input" type="text" name="name" placeholder="Имя">
-              <input class="request__input" type="text" name="phone" placeholder="Номер телефона">
-              <input class="request__input" type="text" name="city" placeholder="Город">
+            <form action="#" class="request__form" id="request-form">
+              <input class="request__input" type="text" name="username" placeholder="Имя" id="request-username">
+              <input class="request__input" type="text" name="phone" placeholder="Номер телефона" id="request-phone">
+              <input class="request__input" type="text" name="city" placeholder="Город" id="request-city">
               <input class="button request__button" type="submit" value="отправить" disabled>
               <input class="request__checkbox" type="checkbox" id="accept">
               <label for="accept" class="request__accept">Принимаю (акцептую) <a href="#offer">договор оферту (агентский
@@ -366,15 +365,11 @@
             </form>
             <!-- /.request__form -->
             <div class="request__connect">
-              <p class="request__phone">Или свяжитесь с нами самостоятельно: <a href="tel:8(903)000-00-00">8 (903)
-                  000-00-00</a></p>
+              <p class="request__phone">Или свяжитесь с нами самостоятельно: <a href="tel:+7 (987) 253-54-28">+7 (987) 253-54-28</a></p>
               <div class="request__links">
-                <a href="" class="button button_light request__link"><img src="./img/icons/icon_whatsapp.svg"
-                    alt="">watsapp</a>
-                <a href="" class="button button_light request__link"><img src="./img/icons/icon_viber.svg"
-                    alt="">viber</a>
-                <a href="" class="button button_light request__link"><img src="./img/icons/icon_telegram.svg"
-                    alt="">telegram</a>
+                <a href="https://msng.link/wa/79872535428" class="button button_light request__link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g><g><path d="M16 7.996c0 4.41-3.587 8-7.998 8A7.929 7.929 0 0 1 3.6 14.674l-3.075.983.997-2.972A7.941 7.941 0 0 1 0 7.996c0-4.412 3.586-8 7.997-8h.005c4.41 0 7.998 3.59 7.998 8zm-3.207 2.187c-.056-.099-.211-.155-.447-.273-.234-.117-1.377-.682-1.593-.757-.213-.08-.414-.052-.574.174-.225.315-.446.635-.625.828-.141.15-.371.17-.564.09-.26-.109-.983-.363-1.876-1.158-.692-.616-1.162-1.383-1.298-1.613-.136-.235-.015-.37.094-.498.118-.146.23-.25.348-.386.118-.136.184-.207.259-.367.08-.155.023-.315-.034-.433-.056-.118-.526-1.266-.72-1.73-.154-.372-.272-.386-.507-.396-.08-.004-.17-.009-.268-.009-.306 0-.625.09-.818.287-.235.24-.818.8-.818 1.947 0 1.148.837 2.258.95 2.413.118.155 1.632 2.544 3.983 3.518 1.838.762 2.384.691 2.801.602.612-.132 1.378-.584 1.57-1.129.194-.546.194-1.01.138-1.11z"/></g></g></svg>watsapp</a>
+                <a href="https://msng.link/vi/79872535428" class="button button_light request__link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17"><g><g><path d="M13.837 7.207a1.219 1.219 0 0 0 0 .173c.007.238.024.733-.518.815a1.018 1.018 0 0 1-.155.013c-.582 0-.615-.542-.63-.803a1.983 1.983 0 0 0-.018-.188c-.361-2.179-1.101-2.95-3.298-3.442a2.2 2.2 0 0 0-.187-.03c-.235-.033-.527-.073-.693-.298-.098-.135-.131-.306-.097-.51.035-.21.17-.563.67-.563.127 0 .252.021.373.041.056.01.109.018.157.024 2.445.294 4.418 2.418 4.399 4.736 0 .01-.001.022-.003.032zM7.973.948c.014-.25.127-.671.718-.671.067 0 .133.004.192.008.048.004.094.007.13.007a.29.29 0 0 0 .045-.003.28.28 0 0 1 .045-.002c3.714.125 6.933 3.498 6.887 7.218 0 .05.002.107.004.168.011.246.025.554-.172.76-.114.119-.272.179-.47.179h-.02c-.635-.012-.644-.604-.649-.888a2.135 2.135 0 0 0-.01-.217c-.46-3.637-2.119-5.347-5.726-5.902a2.58 2.58 0 0 0-.178-.017c-.27-.02-.83-.06-.796-.64zm7.432 13.373c-.451 1.276-1.92 2.395-3.145 2.395h-.02a.254.254 0 0 1-.065-.01l-.153-.036a3.668 3.668 0 0 1-.66-.196c-2.603-1.121-4.849-2.613-6.677-4.435-1.867-1.86-3.347-4.116-4.4-6.703-.365-.895-.38-1.755-.044-2.487.347-.758 1.044-1.331 2.014-1.657.385-.13.761-.129 1.118.002.845.311 2.848 3.045 2.898 3.953.043.8-.572 1.218-.902 1.443-.582.395-.69.881-.359 1.625.684 1.538 1.88 2.704 3.556 3.463.207.095.398.142.565.142.283 0 .513-.14.702-.426.427-.647.945-.976 1.539-.976.44 0 .907.178 1.426.543l.252.176c.406.282.825.574 1.218.892.075.06.154.12.23.179.58.443 1.303.996.907 2.113zm-4.422-8.987c.505.514.802 1.158.796 1.725.018.544-.18.844-.59.893a.618.618 0 0 1-.076.005c-.34 0-.604-.275-.643-.668-.085-.844-.506-1.298-1.327-1.43-.227-.036-.476-.102-.606-.32-.088-.147-.097-.328-.025-.536.153-.444.589-.454.799-.46.555-.013 1.166.277 1.672.791z"/></g></g></svg>viber</a>
+                <a href="https://msng.link/tg/79872535428" class="button button_light request__link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17"><g><g><path d="M13.837 7.207a1.219 1.219 0 0 0 0 .173c.007.238.024.733-.518.815a1.018 1.018 0 0 1-.155.013c-.582 0-.615-.542-.63-.803a1.983 1.983 0 0 0-.018-.188c-.361-2.179-1.101-2.95-3.298-3.442a2.2 2.2 0 0 0-.187-.03c-.235-.033-.527-.073-.693-.298-.098-.135-.131-.306-.097-.51.035-.21.17-.563.67-.563.127 0 .252.021.373.041.056.01.109.018.157.024 2.445.294 4.418 2.418 4.399 4.736 0 .01-.001.022-.003.032zM7.973.948c.014-.25.127-.671.718-.671.067 0 .133.004.192.008.048.004.094.007.13.007a.29.29 0 0 0 .045-.003.28.28 0 0 1 .045-.002c3.714.125 6.933 3.498 6.887 7.218 0 .05.002.107.004.168.011.246.025.554-.172.76-.114.119-.272.179-.47.179h-.02c-.635-.012-.644-.604-.649-.888a2.135 2.135 0 0 0-.01-.217c-.46-3.637-2.119-5.347-5.726-5.902a2.58 2.58 0 0 0-.178-.017c-.27-.02-.83-.06-.796-.64zm7.432 13.373c-.451 1.276-1.92 2.395-3.145 2.395h-.02a.254.254 0 0 1-.065-.01l-.153-.036a3.668 3.668 0 0 1-.66-.196c-2.603-1.121-4.849-2.613-6.677-4.435-1.867-1.86-3.347-4.116-4.4-6.703-.365-.895-.38-1.755-.044-2.487.347-.758 1.044-1.331 2.014-1.657.385-.13.761-.129 1.118.002.845.311 2.848 3.045 2.898 3.953.043.8-.572 1.218-.902 1.443-.582.395-.69.881-.359 1.625.684 1.538 1.88 2.704 3.556 3.463.207.095.398.142.565.142.283 0 .513-.14.702-.426.427-.647.945-.976 1.539-.976.44 0 .907.178 1.426.543l.252.176c.406.282.825.574 1.218.892.075.06.154.12.23.179.58.443 1.303.996.907 2.113zm-4.422-8.987c.505.514.802 1.158.796 1.725.018.544-.18.844-.59.893a.618.618 0 0 1-.076.005c-.34 0-.604-.275-.643-.668-.085-.844-.506-1.298-1.327-1.43-.227-.036-.476-.102-.606-.32-.088-.147-.097-.328-.025-.536.153-.444.589-.454.799-.46.555-.013 1.166.277 1.672.791z"/></g></g></svg>telegram</a>
               </div>
             </div>
           </div>
@@ -395,7 +390,7 @@
       <div class="footer-block">
         <span class="footer__title">Прописать название © 2019</span>
         <!-- /.footer__title -->
-        <a href="tel:+7(000)000-00-00" class="footer__phone">+7 (000) 000-00-00</a> <!-- /.footer_phone -->
+        <a href="tel:+7(987)253-54-28" class="footer__phone">+7 (987) 253-54-28</a> <!-- /.footer_phone -->
         <div class="footer__buttons">
           <button class="button button_light footer__button footer__call">звонок директору</button>
           <button class="button button_light footer__button">взять авто в аренду</button>
@@ -805,10 +800,10 @@
           <!-- /.request__title -->
         </div>
         <!-- /.request__text -->
-        <form action="#" class="modal-request__form">
-          <input class="request__input" type="text" name="name" placeholder="Имя">
-          <input class="request__input" type="text" name="phone" placeholder="Номер телефона">
-          <input class="request__input" type="text" name="city" placeholder="Город">
+        <form action="#" class="modal-request__form" id="modal-form">
+          <input class="request__input" type="text" name="username" placeholder="Имя" id="modal-username">
+          <input class="request__input" type="text" name="phone" placeholder="Номер телефона" id="modal-phone">
+          <input class="request__input" type="text" name="city" placeholder="Город" id="modal-city">
           <input class="button request__button" type="submit" value="отправить" disabled>
           <input class="request__checkbox" type="checkbox" id="modal-accept">
           <label for="modal-accept" class="request__accept">Принимаю (акцептую) <a href="#offer">договор оферту
@@ -817,15 +812,11 @@
         </form>
         <!-- /.request__form -->
         <div class="request__connect">
-          <p class="request__phone">Или свяжитесь с нами самостоятельно: <a href="tel:8(903)000-00-00">8 (903)
-              000-00-00</a></p>
+          <p class="request__phone">Или свяжитесь с нами самостоятельно: <a href="tel:+7(987)253-54-28">+7 (987) 253-54-28</a></p>
           <div class="request__links">
-            <a href="" class="button button_light request__link modal-request__link"><img
-                src="./img/icons/icon_whatsapp.svg" alt="">watsapp</a>
-            <a href="" class="button button_light request__link modal-request__link"><img
-                src="./img/icons/icon_viber.svg" alt="">viber</a>
-            <a href="" class="button button_light request__link modal-request__link"><img
-                src="./img/icons/icon_telegram.svg" alt="">telegram</a>
+            <a href="https://msng.link/wa/79872535428" class="button button_light request__link modal-request__link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g><g><path d="M16 7.996c0 4.41-3.587 8-7.998 8A7.929 7.929 0 0 1 3.6 14.674l-3.075.983.997-2.972A7.941 7.941 0 0 1 0 7.996c0-4.412 3.586-8 7.997-8h.005c4.41 0 7.998 3.59 7.998 8zm-3.207 2.187c-.056-.099-.211-.155-.447-.273-.234-.117-1.377-.682-1.593-.757-.213-.08-.414-.052-.574.174-.225.315-.446.635-.625.828-.141.15-.371.17-.564.09-.26-.109-.983-.363-1.876-1.158-.692-.616-1.162-1.383-1.298-1.613-.136-.235-.015-.37.094-.498.118-.146.23-.25.348-.386.118-.136.184-.207.259-.367.08-.155.023-.315-.034-.433-.056-.118-.526-1.266-.72-1.73-.154-.372-.272-.386-.507-.396-.08-.004-.17-.009-.268-.009-.306 0-.625.09-.818.287-.235.24-.818.8-.818 1.947 0 1.148.837 2.258.95 2.413.118.155 1.632 2.544 3.983 3.518 1.838.762 2.384.691 2.801.602.612-.132 1.378-.584 1.57-1.129.194-.546.194-1.01.138-1.11z"/></g></g></svg>watsapp</a>
+            <a href="https://msng.link/vi/79872535428" class="button button_light request__link modal-request__link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17"><g><g><path d="M13.837 7.207a1.219 1.219 0 0 0 0 .173c.007.238.024.733-.518.815a1.018 1.018 0 0 1-.155.013c-.582 0-.615-.542-.63-.803a1.983 1.983 0 0 0-.018-.188c-.361-2.179-1.101-2.95-3.298-3.442a2.2 2.2 0 0 0-.187-.03c-.235-.033-.527-.073-.693-.298-.098-.135-.131-.306-.097-.51.035-.21.17-.563.67-.563.127 0 .252.021.373.041.056.01.109.018.157.024 2.445.294 4.418 2.418 4.399 4.736 0 .01-.001.022-.003.032zM7.973.948c.014-.25.127-.671.718-.671.067 0 .133.004.192.008.048.004.094.007.13.007a.29.29 0 0 0 .045-.003.28.28 0 0 1 .045-.002c3.714.125 6.933 3.498 6.887 7.218 0 .05.002.107.004.168.011.246.025.554-.172.76-.114.119-.272.179-.47.179h-.02c-.635-.012-.644-.604-.649-.888a2.135 2.135 0 0 0-.01-.217c-.46-3.637-2.119-5.347-5.726-5.902a2.58 2.58 0 0 0-.178-.017c-.27-.02-.83-.06-.796-.64zm7.432 13.373c-.451 1.276-1.92 2.395-3.145 2.395h-.02a.254.254 0 0 1-.065-.01l-.153-.036a3.668 3.668 0 0 1-.66-.196c-2.603-1.121-4.849-2.613-6.677-4.435-1.867-1.86-3.347-4.116-4.4-6.703-.365-.895-.38-1.755-.044-2.487.347-.758 1.044-1.331 2.014-1.657.385-.13.761-.129 1.118.002.845.311 2.848 3.045 2.898 3.953.043.8-.572 1.218-.902 1.443-.582.395-.69.881-.359 1.625.684 1.538 1.88 2.704 3.556 3.463.207.095.398.142.565.142.283 0 .513-.14.702-.426.427-.647.945-.976 1.539-.976.44 0 .907.178 1.426.543l.252.176c.406.282.825.574 1.218.892.075.06.154.12.23.179.58.443 1.303.996.907 2.113zm-4.422-8.987c.505.514.802 1.158.796 1.725.018.544-.18.844-.59.893a.618.618 0 0 1-.076.005c-.34 0-.604-.275-.643-.668-.085-.844-.506-1.298-1.327-1.43-.227-.036-.476-.102-.606-.32-.088-.147-.097-.328-.025-.536.153-.444.589-.454.799-.46.555-.013 1.166.277 1.672.791z"/></g></g></svg>viber</a>
+            <a href="https://msng.link/tg/79872535428" class="button button_light request__link modal-request__link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17"><g><g><path d="M13.837 7.207a1.219 1.219 0 0 0 0 .173c.007.238.024.733-.518.815a1.018 1.018 0 0 1-.155.013c-.582 0-.615-.542-.63-.803a1.983 1.983 0 0 0-.018-.188c-.361-2.179-1.101-2.95-3.298-3.442a2.2 2.2 0 0 0-.187-.03c-.235-.033-.527-.073-.693-.298-.098-.135-.131-.306-.097-.51.035-.21.17-.563.67-.563.127 0 .252.021.373.041.056.01.109.018.157.024 2.445.294 4.418 2.418 4.399 4.736 0 .01-.001.022-.003.032zM7.973.948c.014-.25.127-.671.718-.671.067 0 .133.004.192.008.048.004.094.007.13.007a.29.29 0 0 0 .045-.003.28.28 0 0 1 .045-.002c3.714.125 6.933 3.498 6.887 7.218 0 .05.002.107.004.168.011.246.025.554-.172.76-.114.119-.272.179-.47.179h-.02c-.635-.012-.644-.604-.649-.888a2.135 2.135 0 0 0-.01-.217c-.46-3.637-2.119-5.347-5.726-5.902a2.58 2.58 0 0 0-.178-.017c-.27-.02-.83-.06-.796-.64zm7.432 13.373c-.451 1.276-1.92 2.395-3.145 2.395h-.02a.254.254 0 0 1-.065-.01l-.153-.036a3.668 3.668 0 0 1-.66-.196c-2.603-1.121-4.849-2.613-6.677-4.435-1.867-1.86-3.347-4.116-4.4-6.703-.365-.895-.38-1.755-.044-2.487.347-.758 1.044-1.331 2.014-1.657.385-.13.761-.129 1.118.002.845.311 2.848 3.045 2.898 3.953.043.8-.572 1.218-.902 1.443-.582.395-.69.881-.359 1.625.684 1.538 1.88 2.704 3.556 3.463.207.095.398.142.565.142.283 0 .513-.14.702-.426.427-.647.945-.976 1.539-.976.44 0 .907.178 1.426.543l.252.176c.406.282.825.574 1.218.892.075.06.154.12.23.179.58.443 1.303.996.907 2.113zm-4.422-8.987c.505.514.802 1.158.796 1.725.018.544-.18.844-.59.893a.618.618 0 0 1-.076.005c-.34 0-.604-.275-.643-.668-.085-.844-.506-1.298-1.327-1.43-.227-.036-.476-.102-.606-.32-.088-.147-.097-.328-.025-.536.153-.444.589-.454.799-.46.555-.013 1.166.277 1.672.791z"/></g></g></svg>telegram</a>
           </div>
         </div>
       </div>
@@ -858,10 +849,10 @@
             директора</h2>
           <p class="call-manager__description">Есть вопрос, который хотите обсудить с директором
             напрямую? Оставьте заявку, и Имя Фамилия свяжется
-            с вами в течение ???????</p>
+            с вами в течение 15 мин</p>
         </div>
-        <form action="#" class="call-manager__form">
-          <input type="text" class="call-manager__input request__input" name="name" id="call-name" placeholder="Имя">
+        <form action="#" class="call-manager__form" id="manager-form">
+          <input type="text" class="call-manager__input request__input" name="username" id="call-username" placeholder="Имя">
           <input type="text" class="call-manager__input request__input" name="phone" id="call-phone"
             placeholder="Номер телефона">
           <input type="submit" class="button call-manager__button" value="Отправить" disabled>
@@ -883,7 +874,7 @@
         <span class="details__subtitle">Передайте нам платежные реквизиты за 3 простых шага
         </span>
       </div>
-      <form class="details-form">
+      <form class="details-form" id="details-form">
         <div class="details__card details-card">
           <div class="details__progress progress">
             <span class="progress__number">1<span>/3</span></span>
@@ -918,7 +909,7 @@
             </div>
           </div>
           <h3 class="details-card__title">Укажите контактные данные</h3>
-          <input type="text" class="details__input request__input" name="name" id="details-name" placeholder="Ваши ФИО">
+          <input type="text" class="details__input request__input" name="username" id="details-username" placeholder="Ваши ФИО">
           <input type="text" class="details__input request__input" name="city" id="details-city" placeholder="Город">
           <input type="text" class="details__input request__input" name="phone" id="details-phone"
             placeholder="Телефон">
@@ -977,6 +968,8 @@
     </div>
   </div>
   <script src="./js/jquery-3.3.1.min.js"></script>
+  <script src="./js/jquery.validate.min.js"></script>
+  <script src="./js/jquery.maskedinput.min.js"></script>
   <script src="./js/mCustomScrollbar.concat.min.js"></script>
   <script src="./js/main.js"></script>
 

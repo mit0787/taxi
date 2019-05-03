@@ -2006,6 +2006,13 @@ a:hover {
   color: #8f8f8f;
 }
 
+.error {
+  margin-top: -15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
 .container {
   max-width: 1180px;
   margin: auto;
@@ -2056,6 +2063,11 @@ input[type="radio"] {
 .button_light:hover {
   background: none;
   color: #8f8f8f;
+}
+
+.button:disabled {
+  background-color: #e3eaf0;
+  color: #000;
 }
 
 @media (max-width: 1200px) {
@@ -3518,8 +3530,38 @@ input[type="radio"] {
   color: #4a4a4a;
 }
 
-.request__link img {
+.request__link svg {
   margin-right: 10px;
+  fill: #d0d0d0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.request__link:nth-child(1):hover {
+  color: green;
+  border-color: green;
+}
+
+.request__link:nth-child(1):hover svg {
+  fill: green;
+}
+
+.request__link:nth-child(2):hover {
+  color: violet;
+  border-color: violet;
+}
+
+.request__link:nth-child(2):hover svg {
+  fill: violet;
+}
+
+.request__link:nth-child(3):hover {
+  color: blue;
+  border-color: blue;
+}
+
+.request__link:nth-child(3):hover svg {
+  fill: blue;
 }
 
 .request__image {
