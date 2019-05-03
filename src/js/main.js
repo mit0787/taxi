@@ -47,7 +47,6 @@ window.addEventListener('DOMContentLoaded', function () {
 		phoneLink = document.querySelector('.navbar-phone__link'),
 		heroBtn = document.querySelector('.hero__button'),
 		request = document.querySelector('.modal-request'),
-		submitBtn = document.querySelectorAll('.request__button'),
 		confirm = document.querySelector('.confirm'),
 		callBtn = document.querySelector('.footer__call'),
 		callManager = document.querySelector('.call-manager'),
@@ -190,14 +189,60 @@ window.addEventListener('DOMContentLoaded', function () {
 		}, 1000);
 	}
 
-	// Валидация телефона
+	let btnDetNext = document.querySelector('#details-button'),
+			detInp = document.querySelectorAll('.req-input');
+	
+	btnDetNext.setAttribute("disabled", "disabled");
+	
+	detInp.forEach(function(item) {
+		item.addEventListener('input', function() {
+			if (detInp[0].value !== "" && detInp[1].value !== "" && detInp[2].value) {
+				btnDetNext.removeAttribute("disabled");
+			} else {
+				btnDetNext.setAttribute("disabled", "disabled");
+			}
+		});
+	});
+
+	// Маска полей
 	$("#test-phone").mask("8 (999) 999-999-99",{autoclear: false});
 	$("#request-phone").mask("8 (999) 999-999-99",{autoclear: false});
 	$("#modal-phone").mask("8 (999) 999-999-99",{autoclear: false});
 	$("#call-phone").mask("8 (999) 999-999-99",{autoclear: false});
 	$("#details-phone").mask("8 (999) 999-999-99",{autoclear: false});
+	$("#bic-bank").mask("049999999",{autoclear: false});
+	$("#account").mask("99999 999 9 9999 9999999",{autoclear: false});
+	$("#card-number").mask("9999 9999 9999 9999",{autoclear: false});
 
 	// валидация форм
+	$("#test-form").validate({
+    rules: {
+      phone: "required",
+    },
+    messages: {
+      phone: {
+        required: "Заполните поле"
+      },
+		},
+		errorElement: "div",
+    submitHandler: function (form) {
+      event.preventDefault();
+      $.ajax({
+        url: 'mailer/smart.php',
+        type: 'POST',
+        data: $(form).serialize(),
+        success: function (data) {
+					cardTest[4].style.display = "none";
+					cardTest[5].style.display = "grid";
+					startTimer(180, timer);
+        },
+        error: function (jqXHR, textStatus) {
+          console.log(jqXHR + ': ' + textStatus);
+        }
+      });
+    }
+	});
+
 	$("#request-form").validate({
     rules: {
       username: {
@@ -325,22 +370,49 @@ window.addEventListener('DOMContentLoaded', function () {
         minlength: 2
 			},
 			city: "required",
-      phone: "required"
+			phone: "required",
+			holder: "required",
+			bank: "required",
+			bicbank: "required",
+			account: "required",
+			coraccount: "required",
+			cardnumber: "required"
     },
     messages: {
       username: {
         required: "Заполните поле",
         minlength: jQuery.validator.format("Длина имени не меньше {0} символов"),
       },
-      phone: {
+      city: {
         required: "Заполните поле"
-      }
+			},
+			phone: {
+        required: "Заполните поле"
+			},
+			holder: {
+        required: "Заполните поле"
+			},
+			bank: {
+        required: "Заполните поле"
+			},
+			bicbank: {
+        required: "Заполните поле"
+			},
+			account:  {
+        required: "Заполните поле"
+			},
+			coraccount: {
+        required: "Заполните поле"
+			},
+			cardnumber:  {
+        required: "Заполните поле"
+			}
 		},
 		errorElement: "div",
     submitHandler: function (form) {
       event.preventDefault();
       $.ajax({
-        url: 'mailer/smart.php',
+        url: 'mailer/smartDetails.php',
         type: 'POST',
         data: $(form).serialize(),
         success: function (data) {
@@ -355,7 +427,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	});
 
 	// код ниже для настройки отправки формы
-	let btnSubmit = document.querySelector('.card__button_submit');
+	// let btnSubmit = document.querySelector('.card__button_submit');
 	// 	detailsBtn = document.querySelector('.details__button_submit');
 
 	// detailsBtn.addEventListener('click', function (event) {
@@ -364,13 +436,13 @@ window.addEventListener('DOMContentLoaded', function () {
 	// 	modalClose(details);
 	// });
 
-	btnSubmit.addEventListener('click', function (event) {
-		event.preventDefault();
-		calc();
-		cardTest[4].style.display = "none";
-		cardTest[5].style.display = "grid";
-		startTimer(180, timer);
-	});
+	// btnSubmit.addEventListener('click', function (event) {
+	// 	event.preventDefault();
+	// 	calc();
+	// 	cardTest[4].style.display = "none";
+	// 	cardTest[5].style.display = "grid";
+	// 	startTimer(180, timer);
+	// });
 
 	// submitBtn.forEach(function (item) {
 	// 	item.addEventListener('click', function (event) {
