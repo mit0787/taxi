@@ -2006,6 +2006,11 @@ a:hover {
   color: #8f8f8f;
 }
 
+input[type="text"] {
+  font-size: 16px;
+  font-weight: 400;
+}
+
 .error {
   margin-top: -15px;
   margin-bottom: 15px;
@@ -2070,9 +2075,44 @@ input[type="radio"] {
   color: #000;
 }
 
+.call-btn,
+.watsapp-btn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 20px;
+  z-index: 300;
+}
+
+.call-btn {
+  left: 20px;
+  background: #429cd9;
+}
+
+.call-btn svg {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 10px auto 0;
+  fill: #fff;
+}
+
+.watsapp-btn {
+  right: 20px;
+}
+
 @media (max-width: 1200px) {
   .container {
     width: 90%;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .call-btn,
+  .watsapp-btn {
+    display: block;
   }
 }
 
@@ -4093,7 +4133,7 @@ input[type="radio"] {
 }
 
 .details__button_prev {
-  margin-right: 15px;
+  margin-bottom: 0;
 }
 
 .details__confirm {
