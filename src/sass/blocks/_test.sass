@@ -57,6 +57,8 @@
     background-position: 50% 50%
 .input__wrapper
   max-width: 440px
+  display: flex
+  flex-wrap: wrap
 
 .card
   &__image
@@ -267,6 +269,8 @@
     &-block
       grid-template-rows: auto
       &:first-child
+        label
+          max-width: 290px
         .card__input:checked + label:before,
         .card__input:not(:checked) + label:before
           top: 5px
@@ -285,3 +289,13 @@
     &__final
       br
         display: block
+  .input__wrapper
+    max-width: 290px
+    label:nth-of-type(2)
+      order: 1
+    label:nth-of-type(4)
+      order: 2
+    label:nth-of-type(6)
+      order: 3
+    label:nth-of-type(5)
+      margin-bottom: 25px

@@ -17,6 +17,13 @@ window.addEventListener('DOMContentLoaded', function () {
 		}, 1000);
 	});
 
+	// автодополнение
+	$(function () {
+		$('input[name="city"]').kladr({
+		type: $.kladr.type.city
+		});
+		});
+
 	// выпадающее меню
 	let btnMenu = document.querySelector('.navbar__icon'),
 		btnBlock = document.querySelector('.navbar__buttons'),
@@ -40,8 +47,11 @@ window.addEventListener('DOMContentLoaded', function () {
 	}
 
 	let offerBtnClose = document.querySelector('.offer__button'),
+		privacyBtnClose = document.querySelector('.privacy__button'),
 		offer = document.querySelector('.offer'),
+		privacy = document.querySelector('.privacy'),
 		offerLinks = document.querySelectorAll('a[href="#offer"]'),
+		privacyLinks = document.querySelectorAll('a[href="#privacy"]'),
 		btnClose = document.querySelectorAll('.modal__cross'),
 		modals = document.querySelectorAll('.modal'),
 		phoneLink = document.querySelector('.navbar-phone__link'),
@@ -52,7 +62,9 @@ window.addEventListener('DOMContentLoaded', function () {
 		callManager = document.querySelector('.call-manager'),
 		footerBtn = document.querySelector('.footer__details'),
 		details = document.querySelector('.details'),
-		detailsConfirm = document.querySelector('.details-confirm');
+		detailsConfirm = document.querySelector('.details-confirm'),
+		testPhone = document.querySelector('.card__final span'),
+		testInput = document.querySelector('.test__input');
 
 	btnClose.forEach(function (item, i) { // закрытие модальных окон
 		item.addEventListener('click', function () {
@@ -66,8 +78,18 @@ window.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 
+	privacyLinks.forEach(function (item) { // открытие договора оферты
+		item.addEventListener('click', function () {
+			modalOpen(privacy);
+		});
+	});
+
 	offerBtnClose.addEventListener('click', function () { // закрытие договора оферты
 		modalClose(offer);
+	});
+
+	privacyBtnClose.addEventListener('click', function () { // закрытие договора оферты
+		modalClose(privacy);
 	});
 
 	heroBtn.addEventListener('click', function () { // открытие заявки из блока hero
@@ -205,11 +227,11 @@ window.addEventListener('DOMContentLoaded', function () {
 	});
 
 	// Маска полей
-	$("#test-phone").mask("8 (999) 999-999-99",{autoclear: false});
-	$("#request-phone").mask("8 (999) 999-999-99",{autoclear: false});
-	$("#modal-phone").mask("8 (999) 999-999-99",{autoclear: false});
-	$("#call-phone").mask("8 (999) 999-999-99",{autoclear: false});
-	$("#details-phone").mask("8 (999) 999-999-99",{autoclear: false});
+	$("#test-phone").mask("8 (999) 999-99-99",{autoclear: false});
+	$("#request-phone").mask("8 (999) 999-99-99",{autoclear: false});
+	$("#modal-phone").mask("8 (999) 999-99-99",{autoclear: false});
+	$("#call-phone").mask("8 (999) 999-99-99",{autoclear: false});
+	$("#details-phone").mask("8 (999) 999-99-99",{autoclear: false});
 	$("#bic-bank").mask("049999999",{autoclear: false});
 	$("#account").mask("99999 999 9 9999 9999999",{autoclear: false});
 	$("#card-number").mask("9999 9999 9999 9999",{autoclear: false});
@@ -232,6 +254,7 @@ window.addEventListener('DOMContentLoaded', function () {
         type: 'POST',
         data: $(form).serialize(),
         success: function (data) {
+					testPhone.innerHTML = testInput.value;
 					cardTest[4].style.display = "none";
 					cardTest[5].style.display = "grid";
 					startTimer(180, timer);
@@ -438,6 +461,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	// btnSubmit.addEventListener('click', function (event) {
 	// 	event.preventDefault();
+	// 	testPhone.innerHTML = testInput.value;
 	// 	calc();
 	// 	cardTest[4].style.display = "none";
 	// 	cardTest[5].style.display = "grid";

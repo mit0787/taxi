@@ -1966,6 +1966,67 @@ yx-axis
 }
 
 /* ---------------------------------------- */
+.kladr-error {
+  color: #cb3e27;
+}
+
+#kladr_autocomplete ul {
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #c4c4c4;
+  background-color: white;
+  z-index: 9999;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-width: 200px;
+  max-height: 420px;
+  color: #313131;
+}
+
+#kladr_autocomplete li {
+  display: list-item;
+  list-style-type: none;
+  margin: 0;
+  padding: 8px 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#kladr_autocomplete li + li {
+  border-top: 1px solid #ededed;
+}
+
+#kladr_autocomplete li:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+#kladr_autocomplete li.active {
+  background-color: #e9e9e9;
+}
+
+#kladr_autocomplete a {
+  text-decoration: none;
+}
+
+#kladr_autocomplete strong {
+  color: #038ebd;
+}
+
+#kladr_autocomplete .spinner {
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  background: transparent url("./images/spinner.png") center center no-repeat;
+  z-index: 9999;
+}
+
 @font-face {
   font-family: 'Yandex Sans Text';
   src: url("../fonts/YandexSansText-Regular.eot");
@@ -2714,6 +2775,11 @@ input[type="radio"] {
 
 .input__wrapper {
   max-width: 440px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .card__image {
@@ -3015,6 +3081,9 @@ input[type="radio"] {
     -ms-grid-rows: auto;
         grid-template-rows: auto;
   }
+  .card-block:first-child label {
+    max-width: 290px;
+  }
   .card-block:first-child .card__input:checked + label:before,
   .card-block:first-child .card__input:not(:checked) + label:before {
     top: 5px;
@@ -3035,6 +3104,27 @@ input[type="radio"] {
   }
   .card__final br {
     display: block;
+  }
+  .input__wrapper {
+    max-width: 290px;
+  }
+  .input__wrapper label:nth-of-type(2) {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .input__wrapper label:nth-of-type(4) {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .input__wrapper label:nth-of-type(6) {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .input__wrapper label:nth-of-type(5) {
+    margin-bottom: 25px;
   }
 }
 
